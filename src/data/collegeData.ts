@@ -1,0 +1,610 @@
+import { 
+  Announcement, 
+  FacilityItem, 
+  ProgramItem, 
+  FeeItem, 
+  DownloadItem, 
+  GalleryPhoto, 
+  DepartmentStructure 
+} from '../types';
+
+export const COLLEGE_INFO = {
+  name: "Government Girls Degree College Nawabshah",
+  fullName: "Government Girls Degree College Nawabshah, Sindh, Pakistan",
+  urduName: "",
+  shortName: "GGDCN",
+  established: 1966,
+  location: "Hospital Road / College Road, Nawabshah, District Shaheed Benazirabad, Sindh, Pakistan",
+  address: "District Shaheed Benazirabad, Sindh, Pakistan",
+  phones: ["0244-9470174", "0244-9470173"],
+  phonePrimary: "0244-9470174",
+  phoneSecondary: "0244-9470173",
+  email: "info@ggdcnawabshah.edu.pk",
+  principalEmail: "principal@ggdcnawabshah.edu.pk",
+  facebookUrl: "https://www.facebook.com/share/1JbrdXcJ5u/",
+  affiliation: "Affiliated with Board of Intermediate & Secondary Education (BISE) Shaheed Benazirabad & Shah Abdul Latif University / University of Sindh",
+  department: "College Education Department, Government of Sindh",
+  workingHours: "Monday to Saturday: 08:00 AM – 02:00 PM (Friday: 08:00 AM – 12:30 PM)",
+  logoUrl: "/src/assets/images/college_official_logo.png",
+  heroCampusUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+  libraryUrl: "/src/assets/images/college_library_1786450908678.jpg",
+  
+  // Principal's Message Section
+  principalName: "Prof. Principal Office",
+  principalTitle: "Principal & Institutional Head",
+  principalPhotoUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+  principalMessage: "Welcome to Government Girls Degree College Nawabshah. Established in 1966 under the College Education Department, Government of Sindh, our college stands as a premier seat of learning for young women across District Shaheed Benazirabad. We are committed to fostering academic excellence, moral integrity, scientific curiosity, and digital literacy. With modern science labs, computer suites, solar energy backup, and dedicated faculty, we empower female students to achieve leadership roles in higher education and society.",
+  principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence."
+};
+
+export interface UsefulLink {
+  id: string;
+  title: string;
+  url: string;
+  category: 'Government' | 'Board & Varsity' | 'Admission Portal' | 'Academic Resource';
+}
+
+export const USEFUL_LINKS: UsefulLink[] = [
+  { id: 'ul-1', title: 'College Education Department, Govt of Sindh', url: 'https://college.sindh.gov.pk/', category: 'Government' },
+  { id: 'ul-2', title: 'BISE Shaheed Benazirabad (Board of Intermediate)', url: 'https://bisesba.edu.pk/', category: 'Board & Varsity' },
+  { id: 'ul-3', title: 'SECCAP Online Admission Portal Sindh', url: 'https://seccap.dgcs.gos.pk/', category: 'Admission Portal' },
+  { id: 'ul-4', title: 'Higher Education Commission (HEC) Pakistan', url: 'https://www.hec.gov.pk/', category: 'Academic Resource' },
+  { id: 'ul-5', title: 'Government of Sindh Official Portal', url: 'https://sindh.gov.pk/', category: 'Government' }
+];
+
+export const ANNOUNCEMENTS: Announcement[] = [
+  {
+    id: "N-2026-001",
+    title: "Admissions Open for BS 4-Year Graduation Programs under Sindh Online Admission System",
+    date: "Session 2025-2026",
+    category: "Admissions",
+    isNew: true,
+    summary: "Applications are invited for BS Computer Science, BS English, BS Chemistry, BS Botany, BS Zoology, and BS Economics. Apply online via SECCAP portal or submit form at admission desk."
+  },
+  {
+    id: "N-2026-002",
+    title: "HSSC Intermediate Part-I & Part-II Annual Examination Date Sheet Published by BISE Shaheed Benazirabad",
+    date: "Current Session",
+    category: "Exams",
+    isNew: true,
+    summary: "Students must collect their official Admit Cards from the college dispatch room after clearing dues."
+  },
+  {
+    id: "N-2026-003",
+    title: "Government Merit Scholarship Notification for Underprivileged & Top Performing Female Students",
+    date: "Academic Year 2025-26",
+    category: "Notice",
+    isNew: false,
+    summary: "Government of Sindh College Education Department scholarship application deadline is extended."
+  },
+  {
+    id: "N-2026-004",
+    title: "E-Governance Portal & Digital Grievance Redressal System Active for Students & Guardians",
+    date: "Active Circular",
+    category: "Notice",
+    isNew: false,
+    summary: "Direct submission of feedback, inquiries, and grievances with automated tracking ID numbers."
+  }
+];
+
+export const FACILITIES: FacilityItem[] = [
+  {
+    id: "fac-1",
+    name: "Central Library",
+    description: "Equipped with thousands of textbooks, references, academic journals, encyclopedias, and quiet reading areas.",
+    category: "Academic",
+    iconName: "BookOpen",
+    highlight: "15,000+ Academic Volumes",
+    imageUrl: "/src/assets/images/college_library_1786450908678.jpg",
+    features: [
+      "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
+      "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
+      "Subscribed daily national newspapers, research journals, and academic periodicals",
+      "Digital cataloguing system for rapid book search, issue, and automated return tracking",
+      "Dedicated reference desk and librarian guidance for research and project work"
+    ]
+  },
+  {
+    id: "fac-2",
+    name: "Digital Library",
+    description: "High-speed internet terminals connected to HEC Digital Library resources, research papers, and e-books.",
+    category: "Technology",
+    iconName: "Laptop",
+    highlight: "Free HEC E-Resource Access",
+    imageUrl: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Direct portal access to Higher Education Commission (HEC) National Digital Repository",
+      "High-speed optical fiber internet computer terminals for student research",
+      "Free access to international e-journals, research publications, and e-books",
+      "Digital lecture archives and online course material downloading center",
+      "High-capacity printing and scanning services for academic project submissions"
+    ]
+  },
+  {
+    id: "fac-3",
+    name: "Well Furnished Staff Rooms",
+    description: "Spacious and comfortable departmental staff rooms for faculty meetings, research, and academic counseling.",
+    category: "Infrastructure",
+    iconName: "Users",
+    highlight: "Departmental Lounges",
+    imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Dedicated departmental staff rooms for Science, Humanities, Commerce & IT faculty",
+      "Ergonomic seating and private workstations for lesson preparation and paper grading",
+      "Individual student-faculty counseling desks for academic mentoring",
+      "High-speed Wi-Fi network and desktop terminals for faculty administrative tasks"
+    ]
+  },
+  {
+    id: "fac-4",
+    name: "Soft Boards / Smart Boards",
+    description: "Classrooms equipped with modern interactive soft boards and visual aids for effective multimedia teaching.",
+    category: "Technology",
+    iconName: "Tv",
+    highlight: "Interactive Teaching Aids",
+    imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Interactive smart projectors and digital whiteboards in BS degree lecture halls",
+      "High-resolution visual multimedia aids for complex scientific diagrams and presentations",
+      "Departmental soft display boards for student poster exhibitions and academic notices",
+      "Audio-visual learning tools designed to enhance conceptual retention"
+    ]
+  },
+  {
+    id: "fac-5",
+    name: "Wi-Fi Connectivity",
+    description: "Campus-wide fiber-optic Wi-Fi network for academic research, digital submission, and online learning.",
+    category: "Technology",
+    iconName: "Wifi",
+    highlight: "High-Speed Campus Network",
+    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Optical fiber internet backbone offering high-speed connectivity across campus",
+      "Secure student credential login for safe educational browsing",
+      "Full coverage across Central Library, Computer Labs, Auditorium, and Staff Lounges",
+      "24/7 network monitoring guaranteeing reliable uptime for e-learning"
+    ]
+  },
+  {
+    id: "fac-6",
+    name: "Air Conditioners",
+    description: "Air-conditioned computer laboratories, digital library, auditorium, and principal office for summer comfort.",
+    category: "Infrastructure",
+    iconName: "Wind",
+    highlight: "Climate Controlled Spaces",
+    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Heavy-duty split and cabinet air conditioners installed across key facilities",
+      "Maintains optimal climate comfort during hot summer academic months in Shaheed Benazirabad",
+      "Prevents server overheating and protects sensitive scientific laboratory hardware",
+      "Ensures comfortable environment during long examinations and convocations"
+    ]
+  },
+  {
+    id: "fac-7",
+    name: "Solar Power Plant",
+    description: "Eco-friendly eco-solar energy installation ensuring uninterrupted electricity supply for labs and classrooms.",
+    category: "Infrastructure",
+    iconName: "Sun",
+    highlight: "Uninterrupted Clean Power",
+    imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "50+ kW heavy-duty solar panel installation with industrial battery backup storage",
+      "Zero load-shedding interruption during practical exams, computer classes, and lectures",
+      "Powers lighting, fans, computers, and laboratory scientific instruments round-the-clock",
+      "Reduces campus carbon emissions with clean green renewable energy"
+    ]
+  },
+  {
+    id: "fac-8",
+    name: "Computing & Science Labs Facilities",
+    description: "State-of-the-art Computer Science, Physics, Chemistry, Botany, and Zoology practical laboratories.",
+    category: "Academic",
+    iconName: "FlaskConical",
+    highlight: "Fully Equipped Practical Labs",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Dedicated state-of-the-art practical laboratories for Physics, Chemistry, Botany, Zoology & CS",
+      "High-performance computer systems loaded with programming compilers and IDEs",
+      "Calibrated optical microscopes, chemical apparatus, spectrophotometers, and models",
+      "Strict safety protocols supervised by qualified lab assistants and technical staff"
+    ]
+  },
+  {
+    id: "fac-9",
+    name: "Online Attendance & Admission Systems",
+    description: "Integrated digital attendance system, SMS notification alerts, and online admission processing.",
+    category: "Technology",
+    iconName: "UserCheck",
+    highlight: "Automated E-Governance",
+    imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Integrated with Sindh SECCAP portal for online admission processing",
+      "Daily digital attendance recording with automated SMS alerts sent to parents",
+      "Online merit list publication and instant fee payment verification",
+      "Digital student records desk maintaining attendance thresholds and admit cards"
+    ]
+  },
+  {
+    id: "fac-10",
+    name: "Sports Complex Facility",
+    description: "Dedicated sports ground and indoor facility for badminton, table tennis, volleyball, and athletics.",
+    category: "Sports & Culture",
+    iconName: "Trophy",
+    highlight: "Inter-College Sports Venue",
+    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Spacious outdoor sports field for athletics, volleyball matches, and physical fitness",
+      "Indoor sports hall equipped with table tennis, badminton courts, and indoor games",
+      "Host site for annual inter-college sports competitions and athletics meets",
+      "Supervised by qualified female physical education director with full gear provided"
+    ]
+  },
+  {
+    id: "fac-11",
+    name: "Auditorium (Capacity Of 500)",
+    description: "Grand multipurpose hall with a seating capacity of 500 for convocations, seminars, debates, and events.",
+    category: "Infrastructure",
+    iconName: "Building2",
+    highlight: "500-Seat Multipurpose Hall",
+    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Spacious air-conditioned auditorium with 500 cushioned seats and raised stage",
+      "Integrated acoustic sound system, wireless lapel microphones, and HD projector",
+      "Venue for annual convocations, prize distribution ceremonies, and guest lectures",
+      "Dedicated backstage green rooms for student performers and speaker preparation"
+    ]
+  },
+  {
+    id: "fac-12",
+    name: "First Aid Facility",
+    description: "In-campus medical dispensary equipped with emergency first aid kits, nursing bed, and qualified care.",
+    category: "Security & Amenities",
+    iconName: "HeartPulse",
+    highlight: "Immediate Medical Care",
+    imageUrl: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "In-campus medical care room equipped with nursing bed and emergency kit",
+      "Qualified health attendant on duty during official college operating hours",
+      "Stocked with essential medicines, blood pressure monitors, and wound dressings",
+      "Rapid ambulance coordination protocol with nearest District Headquarters Hospital"
+    ]
+  },
+  {
+    id: "fac-13",
+    name: "Hygienic Cafeteria",
+    description: "Clean cafeteria offering fresh beverages, snacks, and meals at government subsidized student rates.",
+    category: "Security & Amenities",
+    iconName: "Utensils",
+    highlight: "Fresh & Subsidized Catering",
+    imageUrl: "https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "Monitored regularly by college health and sanitation oversight committee",
+      "Subsidized government pricing for fresh snacks, tea, juices, and lunch meals",
+      "Clean dining hall exclusively for female students with reverse osmosis filtered water",
+      "Fresh daily preparation utilizing high-grade ingredients"
+    ]
+  },
+  {
+    id: "fac-14",
+    name: "Beautiful Lush Green Gardens",
+    description: "Landscaped floral lawns, shade trees, and serene courtyard gardens providing a tranquil learning space.",
+    category: "Infrastructure",
+    iconName: "Trees",
+    highlight: "Eco-Friendly Green Campus",
+    imageUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+    features: [
+      "Manicured lawns featuring shade trees, ornamental palms, and seasonal flowerbeds",
+      "Shaded outdoor benches and peaceful courtyard sitting spots for outdoor study",
+      "Promotes ecological balance and an eco-friendly campus environment",
+      "Botanical plant specimen section maintained for Botany department field study"
+    ]
+  },
+  {
+    id: "fac-15",
+    name: "Round-the-Clock Security",
+    description: "Dedicated security guards at all gates, perimeter boundary walls, and 24/7 CCTV camera coverage.",
+    category: "Security & Amenities",
+    iconName: "ShieldCheck",
+    highlight: "24/7 CCTV & Guards Safety",
+    imageUrl: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000",
+    features: [
+      "High perimeter boundary walls with razor wire safety protection",
+      "24/7 CCTV camera surveillance covering entrance gates, corridors, and campus yards",
+      "Uniformed security guards stationed at main and secondary gates",
+      "Strict student identity verification and logged entry system for visitors"
+    ]
+  }
+];
+
+export const ACADEMIC_PROGRAMS: ProgramItem[] = [
+  {
+    id: "prog-1",
+    title: "F.Sc Pre-Medical",
+    level: "Intermediate (HSSC)",
+    duration: "2 Years (Part I & II)",
+    eligibility: "Matriculation (SSC) Science with min 60% marks from BISE Shaheed Benazirabad or equivalent",
+    seats: 250,
+    departments: ["Biology", "Physics", "Chemistry", "English", "Urdu / Sindhi", "Islamic Education / Pakistan Studies"],
+    description: "Comprehensive pre-medical curriculum designed for aspiring medical, dental, nursing, and allied health professionals."
+  },
+  {
+    id: "prog-2",
+    title: "F.Sc Pre-Engineering",
+    level: "Intermediate (HSSC)",
+    duration: "2 Years (Part I & II)",
+    eligibility: "Matriculation (SSC) Science with Mathematics min 60% marks",
+    seats: 150,
+    departments: ["Mathematics", "Physics", "Chemistry", "English", "Urdu / Sindhi"],
+    description: "Rigorous foundation in advanced calculus, mechanics, physical principles, and analytical reasoning for engineering candidates."
+  },
+  {
+    id: "prog-3",
+    title: "F.A (Arts & Humanities)",
+    level: "Intermediate (HSSC)",
+    duration: "2 Years (Part I & II)",
+    eligibility: "Matriculation (SSC) Arts or Science with minimum 45% marks",
+    seats: 200,
+    departments: ["Economics", "Islamic Studies", "Political Science", "Sociology", "Education", "Fine Arts", "Languages"],
+    description: "Diverse academic pathways in humanities, social sciences, governance, and creative arts."
+  },
+  {
+    id: "prog-4",
+    title: "I.Com (Commerce)",
+    level: "Intermediate (HSSC)",
+    duration: "2 Years (Part I & II)",
+    eligibility: "Matriculation (SSC) with minimum 50% marks",
+    seats: 100,
+    departments: ["Principles of Accounting", "Commerce", "Economics", "Business Math"],
+    description: "Foundational training in business bookkeeping, trade economics, and financial principles."
+  },
+  {
+    id: "prog-5",
+    title: "BS Computer Science (BS CS)",
+    level: "Undergraduate (BS 4-Year)",
+    duration: "4 Years (8 Semesters)",
+    eligibility: "HSSC Intermediate Science (Pre-Engg / Computer Science / General Science) min 50% marks",
+    seats: 50,
+    departments: ["Computer Science", "Software Engineering", "Mathematics"],
+    description: "Degree covering programming, database management, web development, network security, and AI fundamentals."
+  },
+  {
+    id: "prog-6",
+    title: "BS English Literature & Linguistics",
+    level: "Undergraduate (BS 4-Year)",
+    duration: "4 Years (8 Semesters)",
+    eligibility: "HSSC (F.A / F.Sc / I.Com) with min 45% marks",
+    seats: 50,
+    departments: ["English Language & Literature"],
+    description: "Advanced literary studies, communication skills, sociolinguistics, and global literature."
+  },
+  {
+    id: "prog-7",
+    title: "BS Chemistry",
+    level: "Undergraduate (BS 4-Year)",
+    duration: "4 Years (8 Semesters)",
+    eligibility: "HSSC F.Sc Pre-Medical / Pre-Engineering with min 50% marks",
+    seats: 50,
+    departments: ["Chemistry"],
+    description: "In-depth research and practical laboratory study in organic, inorganic, analytical, and physical chemistry."
+  },
+  {
+    id: "prog-8",
+    title: "BS Botany & Zoology",
+    level: "Undergraduate (BS 4-Year)",
+    duration: "4 Years (8 Semesters)",
+    eligibility: "HSSC F.Sc Pre-Medical with min 50% marks",
+    seats: 60,
+    departments: ["Botany", "Zoology"],
+    description: "Biological science graduation programs focusing on plant genetics, environmental ecology, and animal physiology."
+  }
+];
+
+export const GRADUATION_FEE_STRUCTURE: FeeItem[] = [
+  {
+    program: "BS Computer Science (BS CS 4-Year)",
+    admissionFee: 1500,
+    tuitionFeePerTerm: 4000,
+    librarySecurityFee: 1000,
+    sportsITFee: 800,
+    examFeePerTerm: 1200,
+    totalFirstTerm: 8500,
+    frequency: "Per Semester",
+    notes: "Government subsidized fee rate. Subsequent semesters: Rs. 6,000 approx."
+  },
+  {
+    program: "BS Science Programs (Chemistry / Botany / Zoology)",
+    admissionFee: 1500,
+    tuitionFeePerTerm: 3500,
+    librarySecurityFee: 1000,
+    sportsITFee: 600,
+    examFeePerTerm: 1200,
+    totalFirstTerm: 7800,
+    frequency: "Per Semester",
+    notes: "Includes laboratory equipment access fund."
+  },
+  {
+    program: "BS Arts & Humanities (BS English / Economics)",
+    admissionFee: 1500,
+    tuitionFeePerTerm: 3000,
+    librarySecurityFee: 1000,
+    sportsITFee: 500,
+    examFeePerTerm: 1000,
+    totalFirstTerm: 7000,
+    frequency: "Per Semester",
+    notes: "Includes digital library access."
+  },
+  {
+    program: "Intermediate HSSC (F.Sc Pre-Medical / Pre-Engineering)",
+    admissionFee: 800,
+    tuitionFeePerTerm: 1800,
+    librarySecurityFee: 500,
+    sportsITFee: 400,
+    examFeePerTerm: 1000,
+    totalFirstTerm: 4500,
+    frequency: "Annual",
+    notes: "Official Sindh Government standard intermediate fee schedule."
+  },
+  {
+    program: "Intermediate HSSC (F.A / I.Com)",
+    admissionFee: 800,
+    tuitionFeePerTerm: 1500,
+    librarySecurityFee: 500,
+    sportsITFee: 400,
+    examFeePerTerm: 800,
+    totalFirstTerm: 4000,
+    frequency: "Annual",
+    notes: "Government subsidized fees."
+  }
+];
+
+export const DEPARTMENTS: DepartmentStructure[] = [
+  {
+    id: "dept-cs",
+    name: "Department of Computer Science & IT",
+    hodTitle: "Head of Department (Computer Science)",
+    hodMessage: "We aim to empower female students with cutting-edge IT, computational logic, and software development skills needed in modern digital economies.",
+    sanctionedPosts: 8,
+    subjectsOffered: ["Programming Fundamentals", "Database Systems", "Web Engineering", "Data Structures", "Cybersecurity Basics"]
+  },
+  {
+    id: "dept-chem",
+    name: "Department of Chemistry",
+    hodTitle: "Head of Department (Chemistry)",
+    hodMessage: "Our laboratory-focused teaching fosters analytical research and practical scientific discovery among young female scholars.",
+    sanctionedPosts: 10,
+    subjectsOffered: ["Organic Chemistry", "Inorganic Chemistry", "Physical Chemistry", "Analytical Instrumentation"]
+  },
+  {
+    id: "dept-bio",
+    name: "Department of Botany & Zoology",
+    hodTitle: "Head of Department (Biological Sciences)",
+    hodMessage: "Focusing on ecological preservation, plant genetics, and biological diversity relevant to Sindh's agricultural landscape.",
+    sanctionedPosts: 12,
+    subjectsOffered: ["Plant Physiology", "Genetics", "Environmental Biology", "Animal Diversity", "Ecology"]
+  },
+  {
+    id: "dept-eng",
+    name: "Department of English Literature & Languages",
+    hodTitle: "Head of Department (English)",
+    hodMessage: "Developing high proficiency in English communication, critical literature analysis, and professional writing.",
+    sanctionedPosts: 14,
+    subjectsOffered: ["Functional English", "Classical Literature", "Linguistics", "Communication Skills"]
+  },
+  {
+    id: "dept-arts",
+    name: "Department of Social Sciences & Humanities",
+    hodTitle: "Head of Department (Social Sciences)",
+    hodMessage: "Nurturing civic awareness, economic understanding, and leadership qualities in our future women decision makers.",
+    sanctionedPosts: 16,
+    subjectsOffered: ["Economics", "Islamic Studies", "Pakistan Studies", "Political Science", "Sociology"]
+  }
+];
+
+export const DOWNLOADS: DownloadItem[] = [
+  {
+    id: "dl-1",
+    title: "Official BS Graduation Admission Form 2026-2027",
+    category: "Admission Forms",
+    size: "1.4 MB",
+    fileFormat: "PDF",
+    updatedDate: "August 01, 2026",
+    description: "Standard application form for BS Computer Science, BS English, Chemistry, Botany, Zoology."
+  },
+  {
+    id: "dl-2",
+    title: "College Official Prospectus & Student Handbook 2026",
+    category: "Prospectus",
+    size: "4.8 MB",
+    fileFormat: "PDF",
+    updatedDate: "July 20, 2026",
+    description: "Complete guide on rules, campus map, academic policies, fee schedules, and discipline."
+  },
+  {
+    id: "dl-3",
+    title: "National Bank Sindh Govt Fee Payment Challan",
+    category: "Challan",
+    size: "850 KB",
+    fileFormat: "PDF",
+    updatedDate: "August 02, 2026",
+    description: "3-part bank deposit challan form for National Bank of Pakistan (NBP) branches."
+  },
+  {
+    id: "dl-4",
+    title: "Student Leave Application & Attendance Medical Form",
+    category: "Certificates & NOC",
+    size: "420 KB",
+    fileFormat: "PDF",
+    updatedDate: "June 15, 2026",
+    description: "Formal leave request template for approval by Vice Principal / Principal."
+  },
+  {
+    id: "dl-5",
+    title: "No Objection Certificate (NOC) / Migration Request Form",
+    category: "Certificates & NOC",
+    size: "610 KB",
+    fileFormat: "PDF",
+    updatedDate: "May 10, 2026",
+    description: "Application for inter-college migration or university transfer NOC."
+  },
+  {
+    id: "dl-6",
+    title: "College Anti-Harassment Policy & Code of Conduct",
+    category: "Academic Policies",
+    size: "1.1 MB",
+    fileFormat: "PDF",
+    updatedDate: "January 05, 2026",
+    description: "Govt of Sindh regulatory compliance manual on campus safety and student rights."
+  }
+];
+
+export const GALLERY_PHOTOS: GalleryPhoto[] = [
+  {
+    id: "g1",
+    title: "College Main Academic Block & Green Lawns",
+    category: "Campus & Gardens",
+    imageUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+    date: "2026",
+    caption: "Lush green gardens and grand architectural facade of Govt Girls Degree College Nawabshah."
+  },
+  {
+    id: "g2",
+    title: "Central Library & Quiet Reading Room",
+    category: "Academics",
+    imageUrl: "/src/assets/images/college_library_1786450908678.jpg",
+    date: "2026",
+    caption: "Spacious central library providing quiet research facilities and e-reference access."
+  },
+  {
+    id: "g3",
+    title: "Science & Computer Practical Laboratories",
+    category: "Labs & Tech",
+    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000",
+    date: "2026",
+    caption: "Modern computing equipment and chemistry apparatus for hands-on student learning."
+  },
+  {
+    id: "g4",
+    title: "Annual Sports Trophy & Athletics Competition",
+    category: "Events & Sports",
+    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000",
+    date: "2026",
+    caption: "College sports complex hosting inter-department badminton, volleyball, and athletics."
+  },
+  {
+    id: "g5",
+    title: "Auditorium Convocation & Prize Distribution Ceremony",
+    category: "Auditorium",
+    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000",
+    date: "2026",
+    caption: "500-capacity auditorium equipped with audio-visual system for academic events."
+  },
+  {
+    id: "g6",
+    title: "Eco-Friendly Solar Power Installation",
+    category: "Campus & Gardens",
+    imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
+    date: "2026",
+    caption: "Solar plant providing clean uninterrupted green energy for college laboratories."
+  }
+];
