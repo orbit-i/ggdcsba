@@ -1,0 +1,140 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 500 500" width="500" height="500">
+  <defs>
+    <!-- Radial gradient for inner seal field -->
+    <radialGradient id="sealBg" cx="50%" cy="50%" r="50%">
+      <stop offset="0%" stop-color="#ffffd6" />
+      <stop offset="70%" stop-color="#e8f8d0" />
+      <stop offset="100%" stop-color="#cbeba3" />
+    </radialGradient>
+
+    <!-- Metallic Gold Rope Pattern -->
+    <pattern id="ropePattern" width="10" height="10" patternUnits="userSpaceOnUse">
+      <circle cx="5" cy="5" r="3" fill="#f5b000" stroke="#b37d00" stroke-width="0.8" />
+    </pattern>
+
+    <!-- Circular path for top arc text -->
+    <path id="textArcTop" d="M 68,250 A 182,182 0 1,1 432,250" fill="none" />
+    <!-- Circular path for bottom arc text -->
+    <path id="textArcBottom" d="M 100,250 A 150,150 0 0,0 400,250" fill="none" />
+  </defs>
+
+  <!-- 1. Outer Red Border Ring -->
+  <circle cx="250" cy="250" r="245" fill="#cc0000" stroke="#800000" stroke-width="3" />
+
+  <!-- 2. Blue Circular Text Ring -->
+  <circle cx="250" cy="250" r="238" fill="#0c2ca8" stroke="#ffffff" stroke-width="2" />
+
+  <!-- 3. Inner Gold Beaded/Rope Ring -->
+  <circle cx="250" cy="250" r="172" fill="none" stroke="#f5b000" stroke-width="6" stroke-dasharray="8,5" />
+  <circle cx="250" cy="250" r="166" fill="none" stroke="#b37d00" stroke-width="1.5" />
+
+  <!-- 4. Inner Field Background -->
+  <circle cx="250" cy="250" r="164" fill="url(#sealBg)" stroke="#0c2ca8" stroke-width="2" />
+
+  <!-- 5. Ring Text - Top: GOVT. GIRLS DEGREE COLLEGE -->
+  <text font-family="'Arial Black', 'Impact', sans-serif" font-weight="900" font-size="27" fill="#ffffff" letter-spacing="2">
+    <textPath href="#textArcTop" startOffset="50%" text-anchor="middle">
+      GOVT. GIRLS DEGREE COLLEGE
+    </textPath>
+  </text>
+
+  <!-- 6. Ring Text - Bottom: Nawabshah -->
+  <text font-family="'Trebuchet MS', 'Arial', sans-serif" font-weight="bold" font-size="30" fill="#ffffff" letter-spacing="3">
+    <textPath href="#textArcBottom" startOffset="50%" text-anchor="middle">
+      Nawabshah
+    </textPath>
+  </text>
+
+  <!-- Decorative Stars on Blue Ring -->
+  <polygon points="72,250 76,240 86,240 78,233 81,223 72,230 63,223 66,233 58,240 68,240" fill="#f5b000" />
+  <polygon points="428,250 432,240 442,240 434,233 437,223 428,230 419,223 422,233 414,240 424,240" fill="#f5b000" />
+
+  <!-- 7. Laurel Wreath / Olive Branches (Left & Right) -->
+  <!-- Left Branch -->
+  <g fill="#1b7a2b" stroke="#0e4718" stroke-width="0.8">
+    <path d="M 152,240 C 140,210 148,170 168,140 C 160,155 155,175 158,195 Z" />
+    <!-- Leaves Left -->
+    <path d="M 155,230 Q 130,220 125,200 Q 140,205 152,220 Z" />
+    <path d="M 150,200 Q 125,185 122,165 Q 138,175 148,192 Z" />
+    <path d="M 153,170 Q 132,150 135,130 Q 148,145 153,162 Z" />
+    <path d="M 163,145 Q 148,125 155,108 Q 165,125 165,140 Z" />
+    <path d="M 158,255 Q 135,250 130,270 Q 145,265 156,252 Z" />
+    <path d="M 165,280 Q 145,285 142,305 Q 155,295 165,278 Z" />
+  </g>
+
+  <!-- Right Branch -->
+  <g fill="#1b7a2b" stroke="#0e4718" stroke-width="0.8">
+    <path d="M 348,240 C 360,210 352,170 332,140 C 340,155 345,175 342,195 Z" />
+    <!-- Leaves Right -->
+    <path d="M 345,230 Q 370,220 375,200 Q 360,205 348,220 Z" />
+    <path d="M 350,200 Q 375,185 378,165 Q 362,175 352,192 Z" />
+    <path d="M 347,170 Q 368,150 365,130 Q 352,145 347,162 Z" />
+    <path d="M 337,145 Q 352,125 345,108 Q 335,125 335,140 Z" />
+    <path d="M 342,255 Q 365,250 370,270 Q 355,265 344,252 Z" />
+    <path d="M 335,280 Q 355,285 358,305 Q 345,295 335,278 Z" />
+  </g>
+
+  <!-- 8. Burning Torch at Top -->
+  <!-- Bowl Base -->
+  <path d="M 220,170 L 280,170 L 272,195 C 272,205 228,205 228,195 Z" fill="#222222" stroke="#000000" stroke-width="2" />
+  <ellipse cx="250" cy="170" rx="30" ry="7" fill="#444444" stroke="#000000" stroke-width="1.5" />
+  <!-- Flame -->
+  <path d="M 250,105 C 265,125 278,140 270,165 C 260,155 255,160 250,165 C 245,160 240,155 230,165 C 222,140 235,125 250,105 Z" fill="#ff2200" />
+  <path d="M 250,118 C 260,132 268,145 262,165 C 255,158 252,160 250,165 C 248,160 245,158 238,165 C 232,145 240,132 250,118 Z" fill="#ffcc00" />
+
+  <!-- 9. Central Shield -->
+  <g id="ShieldGroup">
+    <!-- Shield Outer Outline -->
+    <path d="M 180,205 L 320,205 L 320,270 C 320,320 250,355 250,355 C 250,355 180,320 180,270 Z" fill="#fcdb03" stroke="#0c2ca8" stroke-width="3" />
+    
+    <!-- Shield Divider Line & Bottom Waves -->
+    <path d="M 180,270 C 210,285 290,285 320,270 L 320,270 C 320,320 250,355 250,355 C 250,355 180,320 180,270 Z" fill="#1b90d8" />
+    <path d="M 180,285 C 210,298 290,298 320,285 C 310,315 250,345 250,345 C 250,345 190,315 180,285 Z" fill="#1175b3" />
+    <path d="M 180,298 C 210,310 290,310 320,298 C 300,325 250,348 250,348 C 250,348 200,325 180,298 Z" fill="#1bb8d8" />
+
+    <!-- Left Side: Open Book -->
+    <g transform="translate(192, 218) scale(0.65)">
+      <!-- Pages -->
+      <path d="M 35,40 Q 20,20 0,22 Q -20,20 -35,40 L -35,5 L 0,-10 L 35,5 Z" fill="#ffffff" stroke="#000000" stroke-width="2" />
+      <path d="M 0,-10 L 0,22" stroke="#000000" stroke-width="2" />
+      <!-- Text Lines on Pages -->
+      <line x1="8" y1="5" x2="28" y2="12" stroke="#000000" stroke-width="1.5" />
+      <line x1="8" y1="13" x2="28" y2="20" stroke="#000000" stroke-width="1.5" />
+      <line x1="8" y1="21" x2="28" y2="28" stroke="#000000" stroke-width="1.5" />
+
+      <line x1="-8" y1="5" x2="-28" y2="12" stroke="#000000" stroke-width="1.5" />
+      <line x1="-8" y1="13" x2="-28" y2="20" stroke="#000000" stroke-width="1.5" />
+      <line x1="-8" y1="21" x2="-28" y2="28" stroke="#000000" stroke-width="1.5" />
+    </g>
+
+    <!-- Right Side: Microscope -->
+    <g transform="translate(280, 215) scale(0.55)">
+      <!-- Base -->
+      <rect x="-20" y="55" width="40" height="8" rx="2" fill="#1a1a1a" />
+      <!-- Pillar -->
+      <path d="M -5,55 L -5,20 C -5,10 15,10 15,25 L 15,35" fill="none" stroke="#1a1a1a" stroke-width="5" />
+      <!-- Stage -->
+      <rect x="-18" y="38" width="25" height="4" fill="#1a1a1a" />
+      <!-- Tube -->
+      <rect x="5" y="10" width="8" height="25" transform="rotate(-20)" fill="#333333" stroke="#000000" stroke-width="1" />
+      <circle cx="10" cy="8" r="5" fill="#666666" />
+      <rect x="0" y="28" width="6" height="8" transform="rotate(-20)" fill="#888888" />
+    </g>
+
+    <!-- Two Hands Holding Shield -->
+    <!-- Left Hand -->
+    <path d="M 190,300 C 195,330 225,350 245,348 C 235,340 215,325 205,302 Z" fill="#1a1a1a" />
+    <path d="M 195,302 Q 215,320 235,335 Q 220,335 200,318 Z" fill="#2b2b2b" />
+    <!-- Right Hand -->
+    <path d="M 310,300 C 305,330 275,350 255,348 C 265,340 285,325 295,302 Z" fill="#1a1a1a" />
+    <path d="M 305,302 Q 285,320 265,335 Q 280,335 300,318 Z" fill="#2b2b2b" />
+  </g>
+
+  <!-- 10. Established Ribbon: 1966 -->
+  <g id="Ribbon1966">
+    <path d="M 200,360 L 300,360 L 310,375 L 290,375 L 250,385 L 210,375 L 190,375 Z" fill="#0d7023" stroke="#053e12" stroke-width="1.5" />
+    <text x="250" y="375" font-family="'Arial Black', sans-serif" font-weight="900" font-size="16" fill="#cc0000" text-anchor="middle">
+      1966
+    </text>
+  </g>
+</svg>

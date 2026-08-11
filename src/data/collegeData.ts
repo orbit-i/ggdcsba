@@ -25,14 +25,14 @@ export const COLLEGE_INFO = {
   affiliation: "Affiliated with Board of Intermediate & Secondary Education (BISE) Shaheed Benazirabad & Shah Abdul Latif University / University of Sindh",
   department: "College Education Department, Government of Sindh",
   workingHours: "Monday to Saturday: 08:00 AM – 02:00 PM (Friday: 08:00 AM – 12:30 PM)",
-  logoUrl: "/src/assets/images/college_official_logo.png",
-  heroCampusUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
-  libraryUrl: "/src/assets/images/college_library_1786450908678.jpg",
+  logoUrl: "/images/college_official_logo.png",
+  heroCampusUrl: "/images/hero_campus_1786450892079.jpg",
+  libraryUrl: "/images/college_library_1786450908678.jpg",
   
   // Principal's Message Section
   principalName: "Prof. Principal Office",
   principalTitle: "Principal & Institutional Head",
-  principalPhotoUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+  principalPhotoUrl: "/images/hero_campus_1786450892079.jpg",
   principalMessage: "Welcome to Government Girls Degree College Nawabshah. Established in 1966 under the College Education Department, Government of Sindh, our college stands as a premier seat of learning for young women across District Shaheed Benazirabad. We are committed to fostering academic excellence, moral integrity, scientific curiosity, and digital literacy. With modern science labs, computer suites, solar energy backup, and dedicated faculty, we empower female students to achieve leadership roles in higher education and society.",
   principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence."
 };
@@ -95,7 +95,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Academic",
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
-    imageUrl: "/src/assets/images/college_library_1786450908678.jpg",
+    imageUrl: "/images/college_library_1786450908678.jpg",
     features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
@@ -292,7 +292,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Trees",
     highlight: "Eco-Friendly Green Campus",
-    imageUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+    imageUrl: "/images/hero_campus_1786450892079.jpg",
     features: [
       "Manicured lawns featuring shade trees, ornamental palms, and seasonal flowerbeds",
       "Shaded outdoor benches and peaceful courtyard sitting spots for outdoor study",
@@ -563,7 +563,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: "g1",
     title: "College Main Academic Block & Green Lawns",
     category: "Campus & Gardens",
-    imageUrl: "/src/assets/images/hero_campus_1786450892079.jpg",
+    imageUrl: "/images/hero_campus_1786450892079.jpg",
     date: "2026",
     caption: "Lush green gardens and grand architectural facade of Govt Girls Degree College Nawabshah."
   },
@@ -571,7 +571,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: "g2",
     title: "Central Library & Quiet Reading Room",
     category: "Academics",
-    imageUrl: "/src/assets/images/college_library_1786450908678.jpg",
+    imageUrl: "/images/college_library_1786450908678.jpg",
     date: "2026",
     caption: "Spacious central library providing quiet research facilities and e-reference access."
   },
