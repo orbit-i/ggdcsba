@@ -26,7 +26,7 @@ export const COLLEGE_INFO = {
   department: "College Education Department, Government of Sindh",
   workingHours: "Monday to Saturday: 08:00 AM – 02:00 PM (Friday: 08:00 AM – 12:30 PM)",
   logoUrl: "/images/college_official_logo.png",
-  heroCampusUrl: "/images/hero_campus_1786450892079.jpg",
+  heroCampusUrl: "/images/campus_main_2026.jpg",
   libraryUrl: "/images/college_library_1786450908678.jpg",
   
   // Principal's Message Section
@@ -34,8 +34,41 @@ export const COLLEGE_INFO = {
   principalTitle: "Principal & Institutional Head",
   principalPhotoUrl: "/images/hero_campus_1786450892079.jpg",
   principalMessage: "Welcome to Government Girls Degree College Nawabshah. Established in 1966 under the College Education Department, Government of Sindh, our college stands as a premier seat of learning for young women across District Shaheed Benazirabad. We are committed to fostering academic excellence, moral integrity, scientific curiosity, and digital literacy. With modern science labs, computer suites, solar energy backup, and dedicated faculty, we empower female students to achieve leadership roles in higher education and society.",
-  principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence."
+  principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence.",
+
+  // Regional Director's Message Section (placeholder — awaiting name, photo, and message text from college administration)
+  regionalDirectorName: "Regional Director, College Education",
+  regionalDirectorTitle: "Regional Director, College Education Department, Shaheed Benazirabad Region",
+  regionalDirectorPhotoUrl: "",
+  regionalDirectorMessage: "Message from the Regional Director will be published here shortly. Please provide the official name, photograph, and message text to complete this section."
 };
+
+export interface HeadOfDepartment {
+  id: string;
+  name: string;
+  designation: string;
+  department: string;
+}
+
+export const HODS_LIST: HeadOfDepartment[] = [
+  { id: 'hod-1', name: 'Prof. Khadija Jamali', designation: 'Assistant Professor', department: 'Commerce Department' },
+  { id: 'hod-2', name: 'Prof. Shazia Muzaffar', designation: 'Associate Professor', department: 'Chemistry Department' },
+  { id: 'hod-3', name: 'Prof. Lubna Jamali', designation: 'Associate Professor', department: 'Computer Science' },
+  { id: 'hod-4', name: 'Prof. Dr. Qurat-Ul-Ain', designation: 'Assistant Professor', department: 'Economics Department' },
+  { id: 'hod-5', name: 'Prof. Yasmeen Channar', designation: 'Assistant Professor', department: 'Islamic Culture Department' },
+  { id: 'hod-6', name: 'Prof. Hameeda Sehto', designation: 'Associate Professor', department: 'Botany Department' },
+  { id: 'hod-7', name: 'Prof. Saima Parveen', designation: 'Assistant Professor', department: 'Geography Department' },
+  { id: 'hod-8', name: 'Prof. Shazia Dilber', designation: 'Associate Professor', department: 'Urdu Department' },
+  { id: 'hod-9', name: 'Prof. Asmat Bano', designation: 'Assistant Professor', department: 'Zoology Department' },
+  { id: 'hod-10', name: 'Prof. Ambreen Fatima', designation: 'Associate Professor', department: 'Physics Department' },
+  { id: 'hod-11', name: 'Prof. Rukhsana', designation: 'Assistant Professor', department: 'Mathematics Department' },
+  { id: 'hod-12', name: 'Prof. Saima Jamali', designation: 'Assistant Professor', department: 'English Department' },
+  { id: 'hod-13', name: 'Prof. Salma Jatt', designation: 'Assistant Professor', department: 'Sociology Department' },
+  { id: 'hod-14', name: 'Prof. Shaista Jamali', designation: 'Lecturer', department: 'Pakistan Studies' },
+  { id: 'hod-15', name: 'Prof. Shaheen Shah', designation: 'Assistant Professor', department: 'Sindhi Department' },
+  { id: 'hod-16', name: 'Prof. Qurat-Ul-Ain', designation: 'Lecturer', department: 'Islamiyat Department' },
+  { id: 'hod-17', name: 'Prof. Shazia Lund Balouch', designation: 'Assistant Professor', department: 'Political Science Department' },
+];
 
 export interface UsefulLink {
   id: string;
