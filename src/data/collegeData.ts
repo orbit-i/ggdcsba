@@ -30,10 +30,6 @@ export const COLLEGE_INFO = {
   libraryUrl: "/images/Library.jpeg",
   
   // Principal's Message Section
-
-
-  
-// Principal's Message Section
   principalName: "Prof. Nasreen Wagan",
   principalTitle: "Principal & Institutional Head",
   principalPhotoUrl: "/images/principle.jpg",
@@ -134,13 +130,13 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
     imageUrl: "/images/Library.jpeg",
-   /* features: [
+    features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
       "Subscribed daily national newspapers, research journals, and academic periodicals",
       "Digital cataloguing system for rapid book search, issue, and automated return tracking",
       "Dedicated reference desk and librarian guidance for research and project work"
-     ] */
+    ]
   },
   {
     id: "fac-2",
@@ -149,12 +145,12 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Laptop",
     highlight: "Free HEC E-Resource Access",
-    imageUrl: "/images/Digital_library.jpeg",
-   /* features: [
+    imageUrl: "/images/Digital_Library.jpeg",
+    features: [
       "High-speed optical fiber internet computer terminals for student research",
       "Digital lecture archives and online course material downloading center",
       "High-capacity printing and scanning services for academic project submissions"
-     ] */
+    ]
   },
   {
     id: "fac-3",
@@ -163,13 +159,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Users",
     highlight: "Departmental Lounges",
-    imageUrl: "Staffroom.jpeg",
-   /* features: [
+    imageUrl: "/images/Staffroom.jpeg",
+    features: [
       "Dedicated departmental staff rooms for Science, Humanities, Commerce & IT faculty",
       "Ergonomic seating and private workstations for lesson preparation and paper grading",
       "Individual student-faculty counseling desks for academic mentoring",
       "High-speed Wi-Fi network and desktop terminals for faculty administrative tasks"
-    ]  */
+    ]
   },
   {
     id: "fac-4",
@@ -178,13 +174,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Tv",
     highlight: "Interactive Teaching Aids",
-    imageUrl: "Smart_board.jpeg",
-    /*features: [
+    imageUrl: "/images/Smart_board.jpeg",
+    features: [
       "Interactive smart projectors and digital whiteboards in BS degree lecture halls",
       "High-resolution visual multimedia aids for complex scientific diagrams and presentations",
       "Departmental soft display boards for student poster exhibitions and academic notices",
       "Audio-visual learning tools designed to enhance conceptual retention"
-    ] */
+    ]
   },
   {
     id: "fac-5",
@@ -193,13 +189,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Wifi",
     highlight: "High-Speed Campus Network",
-    imageUrl: "Wifi.jpeg",
-   /* features: [
+    imageUrl: "/images/Wifi.jpeg",
+    features: [
       "Optical fiber internet backbone offering high-speed connectivity across campus",
       "Secure student credential login for safe educational browsing",
       "Full coverage across Central Library, Computer Labs, Auditorium, and Staff Lounges",
       "24/7 network monitoring guaranteeing reliable uptime for e-learning"
-    ]   */
+    ]
   },
   {
     id: "fac-8",
@@ -209,12 +205,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/physics_lab.jpg",
-    /* features: [
+    features: [
       "Dedicated practical workstations for HSSC and BS Physics experiments",
       "Calibrated instruments for mechanics, optics, electricity, and electronics experiments",
       "Reference charts, historical scientific displays, and demonstration models",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ] */
+    ]
   },
   {
     id: "fac-8b",
@@ -224,12 +220,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/chemistry_lab.jpg",
-   /* features: [
+    features: [
       "Dedicated practical workstations with individual fume extraction and water taps",
       "Chemical apparatus, reagents, and glassware for organic, inorganic, and physical chemistry",
       "Reference charts and displays on foundational chemistry concepts and pioneers",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ]   */
+    ]
   },
   {
     id: "fac-8c",
@@ -239,12 +235,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/zoology_lab.jpg",
-   /* features: [
+    features: [
       "Dedicated practical workstations for HSSC and BS Zoology students",
       "Preserved specimens, anatomical models, and classification charts",
       "Calibrated optical microscopes for cellular and specimen study",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-   ]   */
+    ]
   },
   {
     id: "fac-8d",
@@ -253,14 +249,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Academic",
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
-    imageUrl: "Computer_lab.jpeg",
-   /* features: [
+    imageUrl: "/images/Computer_lab.jpeg",
+    features: [
       "High-performance computer systems loaded with programming compilers and IDEs",
       "Dedicated practical workstations for HSSC and BS Computer Science students",
       "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-   /] */
-
+    ]
   },
   {
     id: "fac-11",
@@ -269,10 +264,14 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Building2",
     highlight: "500-Seat Multipurpose Hall",
-    imageUrl: "/images/auditorium.jpeg",
-
+    imageUrl: "/images/auditorium.jpg",
+    features: [
+      "500-seat multipurpose hall used for convocations, seminars, and cultural events",
+      "Raised stage with dedicated seating arrangement for guests and dignitaries",
+      "Sound system and lighting setup for ceremonies, debates, and competitions",
+      "Regularly maintained and available for inter-college academic events"
+    ]
   }
-  
 ];
 
 export const ACADEMIC_PROGRAMS: ProgramItem[] = [

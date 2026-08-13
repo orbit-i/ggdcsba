@@ -1,29 +1,8 @@
-import React, { useState } from 'react';
-import { Users, ShieldCheck, Upload, Search, CheckCircle2, AlertCircle, FileText, Building2, GraduationCap } from 'lucide-react';
-import { useSiteData } from '../../context/DataContext';
+import React from 'react';
+import { Users, ShieldCheck, AlertCircle, GraduationCap } from 'lucide-react';
 import { HODS_LIST } from '../../data/collegeData';
 
 export const StaffDirectoryPage: React.FC = () => {
-  const { sanctionedPosts } = useSiteData();
-  const [departmentFilter, setDepartmentFilter] = useState<string>('All');
-  const [searchTerm, setSearchTerm] = useState<string>('');
-  const [uploadSuccess, setUploadSuccess] = useState<boolean>(false);
-
-  const departments = ['All', 'College Administration', 'Computer Science & IT', 'Chemistry', 'Biological Sciences', 'English Literature', 'Commerce & Humanities', 'Library & Digital Resources', 'Sports Directorate', 'Accounts & Administration'];
-
-  const filteredPosts = sanctionedPosts.filter(post => {
-    const matchesDept = departmentFilter === 'All' || post.department === departmentFilter;
-    const matchesSearch = post.designation.toLowerCase().includes(searchTerm.toLowerCase()) || 
-                          post.department.toLowerCase().includes(searchTerm.toLowerCase());
-    return matchesDept && matchesSearch;
-  });
-
-  const handleSimulatedUpload = (e: React.FormEvent) => {
-    e.preventDefault();
-    setUploadSuccess(true);
-    setTimeout(() => setUploadSuccess(false), 5000);
-  };
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-10">
       
@@ -75,37 +54,19 @@ export const StaffDirectoryPage: React.FC = () => {
         </div>
       </div>
 
-
-      {/* Filter and Search Bar */}
-      <div className="bg-white p-4 rounded-2xl border border-emerald-200 shadow-2xs flex flex-col md:flex-row items-center justify-between gap-4">
-        
-        {/* Department Filter Dropdown */}
-        <div className="w-full md:w-auto flex items-center gap-2">
-          <label className="text-xs font-bold text-slate-700 shrink-0">Department:</label>
-          <select
-            value={departmentFilter}
-            onChange={(e) => setDepartmentFilter(e.target.value)}
-            className="bg-slate-50 border border-emerald-300 rounded-xl p-2 text-xs font-semibold text-emerald-950 focus:outline-none focus:ring-2 focus:ring-emerald-600"
-          >
-            {departments.map((d, i) => (
-              <option key={i} value={d}>{d}</option>
-            ))}
-          </select>
+      {/* Compliance Directive Notice Box (Strictly adheres to "No fake staff data" rule) */}
+      <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 shadow-2xs space-y-3">
+        <div className="flex items-center gap-2 text-amber-900 font-bold text-sm">
+          <AlertCircle className="w-5 h-5 text-amber-700 shrink-0" />
+          <span>Official Roster & Data Integrity Guidelines</span>
         </div>
-
-        {/* Search Input */}
-        <div className="relative w-full md:w-72">
-          <Search className="w-4 h-4 text-slate-400 absolute left-3 top-1/2 -translate-y-1/2" />
-          <input
-            type="text"
-            placeholder="Search designation or department..."
-            value={searchTerm}
-            onChange={(e) => setSearchTerm(e.target.value)}
-            className="w-full bg-slate-50 border border-emerald-200 rounded-xl pl-9 pr-3 py-2 text-xs text-slate-800 focus:outline-none focus:ring-2 focus:ring-emerald-600"
-          />
+        <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
+          In strict compliance with Department of College Education Government of Sindh directives, this portal displays the official <strong>Sanctioned Organizational Structure & Cadre Posts</strong>. To prevent unauthorized or non-verified personnel data publishing, individual staff profiles are updated directly by the College Principal's Office and IT Wing.
+        </p>
+        <div className="text-xs text-amber-950 font-medium flex items-center gap-2 bg-amber-100/80 p-2.5 rounded-lg border border-amber-200">
+          <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
+          <span>Verified Roster Code: SINDH-CED-GGDCN-STAFF-2026</span>
         </div>
-
-    
       </div>
 
     </div>
