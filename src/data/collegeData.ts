@@ -37,7 +37,7 @@ export const COLLEGE_INFO = {
   principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence.",
 
   // Regional Director's Message Section (placeholder — awaiting name, photo, and message text from college administration)
-  regionalDirectorName: "Prof. Lala Rukh Baloch Regional Director, College Education",
+  regionalDirectorName: "Prof. Lala Rukh Baloch ",
   regionalDirectorTitle: "Regional Director, Colleges, (BS-20), Shaheed Benazirabad Region",
   regionalDirectorPhotoUrl: "/images/Regional_Director.jpeg",
   regionalDirectorMessage: "Girls’ education is the foundation of an educated, empowered, and progressive society. I am pleased to acknowledge the role of Government Girls Degree College, Nawabshah in providing young women with quality education and opportunities to achieve their academic and professional aspirations.I encourage our students to pursue knowledge with dedication, confidence, and a spirit of excellence. Education empowers girls to become capable, independent, and responsible citizens who can contribute meaningfully to society and the development of our nation. I appreciate the dedicated efforts of the faculty and administration in promoting quality education and creating a supportive academic environment for our students.I wish all our students continued success and a bright future."
@@ -87,7 +87,7 @@ export const USEFUL_LINKS: UsefulLink[] = [
 ];
 
 export const ANNOUNCEMENTS: Announcement[] = [
-  {
+ /* {
    // id: "N-2026-001",
    // title: "Admissions Open for BS 4-Year Graduation Programs under Sindh Online Admission System",
    // date: "Session 2025-2026",
@@ -118,7 +118,7 @@ export const ANNOUNCEMENTS: Announcement[] = [
    // category: "Notice",
    // isNew: false,
    // summary: "Direct submission of feedback, inquiries, and grievances with automated tracking ID numbers."
-  }
+  } */
 ];
 
 export const FACILITIES: FacilityItem[] = [
@@ -130,13 +130,13 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
     imageUrl: "/images/Library.jpeg",
-   // features: [
+   /* features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
       "Subscribed daily national newspapers, research journals, and academic periodicals",
       "Digital cataloguing system for rapid book search, issue, and automated return tracking",
       "Dedicated reference desk and librarian guidance for research and project work"
-    // ]
+     ] */
   },
   {
     id: "fac-2",
@@ -146,11 +146,11 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Laptop",
     highlight: "Free HEC E-Resource Access",
     imageUrl: "/images/Digital_library.jpeg",
-   // features: [
+   /* features: [
       "High-speed optical fiber internet computer terminals for student research",
       "Digital lecture archives and online course material downloading center",
       "High-capacity printing and scanning services for academic project submissions"
-    // ]
+     ] */
   },
   {
     id: "fac-3",
@@ -160,12 +160,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Users",
     highlight: "Departmental Lounges",
     imageUrl: "Staffroom.jpeg",
-   // features: [
+   /* features: [
       "Dedicated departmental staff rooms for Science, Humanities, Commerce & IT faculty",
       "Ergonomic seating and private workstations for lesson preparation and paper grading",
       "Individual student-faculty counseling desks for academic mentoring",
       "High-speed Wi-Fi network and desktop terminals for faculty administrative tasks"
-   // ]
+    ]  */
   },
   {
     id: "fac-4",
@@ -175,12 +175,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Tv",
     highlight: "Interactive Teaching Aids",
     imageUrl: "Smart_board.jpeg",
-    // features: [
+    /*features: [
       "Interactive smart projectors and digital whiteboards in BS degree lecture halls",
       "High-resolution visual multimedia aids for complex scientific diagrams and presentations",
       "Departmental soft display boards for student poster exhibitions and academic notices",
       "Audio-visual learning tools designed to enhance conceptual retention"
-   // ]
+    ] */
   },
   {
     id: "fac-5",
@@ -190,15 +190,15 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Wifi",
     highlight: "High-Speed Campus Network",
     imageUrl: "Wifi.jpeg",
-   // features: [
+   /* features: [
       "Optical fiber internet backbone offering high-speed connectivity across campus",
       "Secure student credential login for safe educational browsing",
       "Full coverage across Central Library, Computer Labs, Auditorium, and Staff Lounges",
       "24/7 network monitoring guaranteeing reliable uptime for e-learning"
-   // ]
+    ]   */
   },
   {
-   // id: "fac-6",
+   /* id: "fac-6",
    // name: "Air Conditioners",
    // description: "Air-conditioned computer laboratories, digital library, auditorium, and principal office for summer comfort.",
    // category: "Infrastructure",
@@ -210,10 +210,10 @@ export const FACILITIES: FacilityItem[] = [
       "Maintains optimal climate comfort during hot summer academic months in Shaheed Benazirabad",
       "Prevents server overheating and protects sensitive scientific laboratory hardware",
       "Ensures comfortable environment during long examinations and convocations"
-   // ]
+    ] */
   },
   {
-   // id: "fac-7",
+   /* id: "fac-7",
    // name: "Solar Power Plant",
    // description: "Eco-friendly eco-solar energy installation ensuring uninterrupted electricity supply for labs and classrooms.",
   //  category: "Infrastructure",
@@ -225,7 +225,7 @@ export const FACILITIES: FacilityItem[] = [
       "Zero load-shedding interruption during practical exams, computer classes, and lectures",
       "Powers lighting, fans, computers, and laboratory scientific instruments round-the-clock",
       "Reduces campus carbon emissions with clean green renewable energy"
-  //  ]
+   ]  */
   },
   {
     id: "fac-8",
@@ -235,12 +235,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/physics_lab.jpg",
-    // features: [
+    /* features: [
       "Dedicated practical workstations for HSSC and BS Physics experiments",
       "Calibrated instruments for mechanics, optics, electricity, and electronics experiments",
       "Reference charts, historical scientific displays, and demonstration models",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    //]
+    ] */
   },
   {
     id: "fac-8b",
@@ -250,12 +250,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/chemistry_lab.jpg",
-   // features: [
+   /* features: [
       "Dedicated practical workstations with individual fume extraction and water taps",
       "Chemical apparatus, reagents, and glassware for organic, inorganic, and physical chemistry",
       "Reference charts and displays on foundational chemistry concepts and pioneers",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-   // ]
+    ]   */
   },
   {
     id: "fac-8c",
@@ -265,12 +265,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/zoology_lab.jpg",
-   // features: [
+   /* features: [
       "Dedicated practical workstations for HSSC and BS Zoology students",
       "Preserved specimens, anatomical models, and classification charts",
       "Calibrated optical microscopes for cellular and specimen study",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-  //  ]
+   ]   */
   },
   {
     id: "fac-8d",
@@ -280,12 +280,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "Computer_lab.jpeg",
-   // features: [
+   /* features: [
       "High-performance computer systems loaded with programming compilers and IDEs",
       "Dedicated practical workstations for HSSC and BS Computer Science students",
       "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-   // ]
+   /] */
   },
   {
     id: "fac-9",
@@ -295,12 +295,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "UserCheck",
     highlight: "Automated E-Governance",
     imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000",
-  //  features: [
+  /* features: [
       "Integrated with Sindh SECCAP portal for online admission processing",
       "Daily digital attendance recording with automated SMS alerts sent to parents",
       "Online merit list publication and instant fee payment verification",
       "Digital student records desk maintaining attendance thresholds and admit cards"
-  //  ]
+   ]    */
   },
   
   {
