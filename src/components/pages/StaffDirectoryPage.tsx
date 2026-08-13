@@ -119,59 +119,7 @@ export const StaffDirectoryPage: React.FC = () => {
           />
         </div>
 
-      </div>
-
-      {/* Sanctioned Posts Table / Cards */}
-      <div className="bg-white rounded-2xl border border-emerald-200 shadow-2xs overflow-hidden">
-        <div className="bg-emerald-950 text-white p-4 sm:p-6 flex items-center justify-between">
-          <div>
-            <h2 className="font-serif font-bold text-lg text-white">Departmental Cadre & Sanctioned Positions</h2>
-            <p className="text-xs text-emerald-300">Sanctioned quota approved by Govt of Sindh Finance & Education Dept</p>
-          </div>
-          <span className="bg-emerald-800 text-amber-300 text-xs font-mono font-bold px-3 py-1 rounded border border-emerald-700">
-            Total Sanctioned Posts: 65+
-          </span>
-        </div>
-
-        <div className="divide-y divide-emerald-100">
-          {filteredPosts.map((post) => (
-            <div key={post.id} className="p-4 sm:p-6 hover:bg-emerald-50/50 transition-colors flex flex-col md:flex-row md:items-center justify-between gap-4">
-              <div className="space-y-1.5 max-w-2xl">
-                <div className="flex items-center gap-2">
-                  <span className="bg-emerald-100 text-emerald-900 text-[10px] font-bold px-2 py-0.5 rounded font-mono">
-                    {post.id}
-                  </span>
-                  <span className="bg-amber-100 text-amber-900 text-[10px] font-bold px-2 py-0.5 rounded">
-                    {post.department}
-                  </span>
-                </div>
-
-                <h3 className="font-bold text-base text-emerald-950 font-serif">
-                  {post.designation}
-                </h3>
-
-                <p className="text-xs text-slate-600">
-                  <strong className="text-slate-900">Responsibilities:</strong> {post.role}
-                </p>
-
-                <p className="text-[11px] text-slate-500">
-                  <strong>Required Qualification:</strong> {post.qualificationRequired}
-                </p>
-              </div>
-
-              <div className="flex flex-col sm:flex-row md:flex-col items-start md:items-end gap-2 shrink-0">
-                <span className="bg-emerald-800 text-white text-xs font-bold px-3 py-1 rounded-full">
-                  {post.sanctionedQuota} Sanctioned Seat{post.sanctionedQuota > 1 ? 's' : ''}
-                </span>
-
-                <span className="text-[11px] text-emerald-700 font-semibold flex items-center gap-1">
-                  <CheckCircle2 className="w-3.5 h-3.5 text-emerald-600" />
-                  {post.status}
-                </span>
-              </div>
-            </div>
-          ))}
-        </div>
+    
       </div>
 
     </div>

@@ -1,0 +1,6 @@
+{
+  "name": "Government Girls Degree College Nawabshah",
+  "description": "Official portal for Government Girls Degree College Nawabshah, Sindh, Pakistan. Featuring academic programs, fee structures, notices, staff directory, facilities, and grievance redressal.",
+  "requestFramePermissions": [],
+  "majorCapabilities": ["MAJOR_CAPABILITY_SERVER_SIDE_GEMINI_API"]
+}
