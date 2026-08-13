@@ -129,7 +129,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Academic",
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
-    imageUrl: "/images/Library.jpg",
+    imageUrl: "/images/Library.jpeg",
     features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
@@ -145,7 +145,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Laptop",
     highlight: "Free HEC E-Resource Access",
-    imageUrl: "/images/Digital_library.jpg",
+    imageUrl: "/images/Digital_library.jpeg",
     features: [
       "High-speed optical fiber internet computer terminals for student research",
       "Digital lecture archives and online course material downloading center",
@@ -174,7 +174,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Tv",
     highlight: "Interactive Teaching Aids",
-    imageUrl: "https://images.unsplash.com/photo-1580582932707-520aed937b7b?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "hSmart_board.jpeg",
     features: [
       "Interactive smart projectors and digital whiteboards in BS degree lecture halls",
       "High-resolution visual multimedia aids for complex scientific diagrams and presentations",
@@ -189,7 +189,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Wifi",
     highlight: "High-Speed Campus Network",
-    imageUrl: "https://images.unsplash.com/photo-1544197150-b99a580bb7a8?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "Wifi.jpeg",
     features: [
       "Optical fiber internet backbone offering high-speed connectivity across campus",
       "Secure student credential login for safe educational browsing",
@@ -279,7 +279,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Academic",
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
-    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "Computer_lab.jpeg",
     features: [
       "High-performance computer systems loaded with programming compilers and IDEs",
       "Dedicated practical workstations for HSSC and BS Computer Science students",
