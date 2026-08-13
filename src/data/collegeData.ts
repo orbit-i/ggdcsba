@@ -189,7 +189,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Wifi",
     highlight: "High-Speed Campus Network",
-    imageUrl: "Wifi.jpeg",
+    imageUrl: "Wiifii.jpeg",
     features: [
       "Optical fiber internet backbone offering high-speed connectivity across campus",
       "Secure student credential login for safe educational browsing",
@@ -377,21 +377,7 @@ export const FACILITIES: FacilityItem[] = [
       "Botanical plant specimen section maintained for Botany department field study"
     ]
   },
-  {
-    id: "fac-15",
-    name: "Round-the-Clock Security",
-    description: "Dedicated security guards at all gates, perimeter boundary walls, and 24/7 CCTV camera coverage.",
-    category: "Security & Amenities",
-    iconName: "ShieldCheck",
-    highlight: "24/7 CCTV & Guards Safety",
-    imageUrl: "https://images.unsplash.com/photo-1557597774-9d273605dfa9?auto=format&fit=crop&q=80&w=1000",
-    features: [
-      "High perimeter boundary walls with razor wire safety protection",
-      "24/7 CCTV camera surveillance covering entrance gates, corridors, and campus yards",
-      "Uniformed security guards stationed at main and secondary gates",
-      "Strict student identity verification and logged entry system for visitors"
-    ]
-  }
+  
 ];
 
 export const ACADEMIC_PROGRAMS: ProgramItem[] = [
