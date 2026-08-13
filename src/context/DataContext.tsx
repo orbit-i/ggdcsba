@@ -219,7 +219,7 @@ export interface DataContextType {
 
 const DataContext = createContext<DataContextType | undefined>(undefined);
 
-const LOCAL_STORAGE_KEY = 'ggdcn_website_data_v1';
+const LOCAL_STORAGE_KEY = 'ggdcn_website_data_v2';
 
 export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children }) => {
   const [collegeInfo, setCollegeInfo] = useState<typeof COLLEGE_INFO>(() => {
