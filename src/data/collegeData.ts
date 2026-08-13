@@ -30,6 +30,10 @@ export const COLLEGE_INFO = {
   libraryUrl: "/images/Library.jpeg",
   
   // Principal's Message Section
+
+
+  
+// Principal's Message Section
   principalName: "Prof. Nasreen Wagan",
   principalTitle: "Principal & Institutional Head",
   principalPhotoUrl: "/images/principle.jpg",
