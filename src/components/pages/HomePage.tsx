@@ -78,7 +78,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               Empowering Women Through Excellence in Education
             </h1>
             <p className="text-emerald-100 text-sm sm:text-base max-w-2xl leading-relaxed">
-              Government Girls Degree College Nawabshah offers accredited Intermediate (HSSC) and Undergraduate BS 4-Year degree programs in a safe, state-of-the-art academic environment.
+              Government Girls Degree College Nawabshah offers accredited Intermediate (HSC) and Undergraduate degree programs in a safe, state-of-the-art academic environment.
             </p>
 
             <div className="flex flex-wrap gap-3 pt-2">

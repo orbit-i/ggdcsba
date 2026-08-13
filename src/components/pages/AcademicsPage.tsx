@@ -3,6 +3,39 @@ import { useSiteData } from '../../context/DataContext';
 import { GraduationCap, BookOpen, CheckCircle2, FileText, ArrowRight, Clock, Users, Laptop } from 'lucide-react';
 import { ProgramItem } from '../../types';
 
+const faculties = [
+  {
+    name: 'Faculty of Science and Technology',
+    departments: [
+      'Computer Science Department',
+      'Chemistry Department',
+      'Mathematics Department',
+      'Physics Department',
+      'Zoology Department',
+      'Botany Department',
+      'Geography Department',
+    ],
+  },
+  {
+    name: 'Faculty of Social Sciences and Humanities',
+    departments: [
+      'Political Science Department',
+      'Islamic Culture Department',
+      'Sociology Department',
+      'Islamic Studies Department',
+      'English Department',
+      'Urdu Department',
+    ],
+  },
+  {
+    name: 'Faculty of Management Sciences',
+    departments: [
+      'Commerce Department',
+      'Economics Department',
+    ],
+  },
+];
+
 export const AcademicsPage: React.FC = () => {
   const { programs } = useSiteData();
   const [activeTab, setActiveTab] = useState<'All' | 'Undergraduate (BS 4-Year)' | 'Intermediate (HSSC)'>('All');
@@ -112,6 +145,94 @@ export const AcademicsPage: React.FC = () => {
             </div>
           </div>
         ))}
+      </div>
+
+      {/* Faculties & Departments */}
+      <div className="space-y-6">
+        <div className="flex items-center gap-2 text-emerald-900 text-xs font-bold uppercase tracking-wider">
+          <GraduationCap className="w-4 h-4" />
+          Programs Offered
+        </div>
+
+        <div className="bg-sky-400/80 rounded-2xl p-6 space-y-6">
+          {faculties.map((faculty, idx) => (
+            <div key={idx} className="space-y-2">
+              <h3 className="text-base font-bold font-serif text-slate-900">
+                {faculty.name}
+              </h3>
+              <ul className="space-y-1.5">
+                {faculty.departments.map((dept, i) => (
+                  <li key={i} className="text-sm text-slate-900">
+                    • {dept}
+                  </li>
+                ))}
+              </ul>
+            </div>
+          ))}
+        </div>
+      </div>
+
+      {/* Programs Offered Table */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold font-serif text-emerald-950 text-center underline decoration-2">
+          Program Offered
+        </h2>
+        <p className="text-sm text-slate-700">
+          GGDCN College Offered Following Programs:
+        </p>
+
+        <div className="rounded-xl overflow-hidden border border-emerald-200">
+          <div className="grid grid-cols-1 sm:grid-cols-3 bg-emerald-50 border-b border-emerald-200">
+            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200 underline decoration-1">
+              F.Sc. (Pre-Medical - Pre-Engineering)
+            </div>
+            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200">
+              I.C.S
+            </div>
+            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center">
+              I.COM
+            </div>
+          </div>
+          <div className="grid grid-cols-1 sm:grid-cols-2 bg-blue-50">
+            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200">
+              AD In Sciences
+            </div>
+            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center">
+              AD In Arts
+            </div>
+          </div>
+        </div>
+      </div>
+
+      {/* Admission Procedure & Eligibility Criteria */}
+      <div className="space-y-4">
+        <h2 className="text-2xl font-bold font-serif text-emerald-950 text-center">
+          Admission Procedure
+        </h2>
+
+        <div className="space-y-3">
+          <h3 className="text-lg font-bold text-slate-900">Eligibility Criteria</h3>
+
+          <ol className="list-decimal list-inside space-y-3 text-sm text-slate-800">
+            <li>
+              <span className="font-semibold underline">F.Sc. (Pre-Medical - Pre-Engineering)/ I.C.S/ I.COM/ARTS</span>
+              <ul className="list-disc list-inside pl-6 mt-1 space-y-1 text-slate-700">
+                <li>SSC or Equivalent</li>
+                <li>Minimum qualification for admission 45% & above marks are required.</li>
+                <li>Admission is Free of cost</li>
+              </ul>
+            </li>
+            <li>
+              <span className="font-semibold">
+                AD in Sciences (<span className="underline">B.Sc-I</span> & <span className="underline">B.Sc-II</span>) / AD in Arts (B.A-I & <span className="underline">B.A</span>-II)
+              </span>
+              <ul className="list-disc list-inside pl-6 mt-1 space-y-1 text-slate-700">
+                <li>HSC or Equivalent</li>
+                <li>Minimum Qualification for admission 45% & above marks are required.</li>
+              </ul>
+            </li>
+          </ol>
+        </div>
       </div>
 
       {/* Online Admission & Document Checklist */}

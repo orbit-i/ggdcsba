@@ -20,12 +20,12 @@ export const FacilityDetailModal: React.FC<FacilityDetailModalProps> = ({
 
   // Fallback images based on facility category
   const fallbackImage = facility.category === 'Academic' 
-    ? "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000"
+    ? "#"
     : facility.category === 'Technology'
-    ? "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000"
+    ? "#"
     : facility.category === 'Sports & Culture'
-    ? "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000"
-    : "https://images.unsplash.com/photo-1541829070764-84a7d30dd3f3?auto=format&fit=crop&q=80&w=1000";
+    ? "#"
+    : "#";
 
   const displayImage = facility.imageUrl || fallbackImage;
 

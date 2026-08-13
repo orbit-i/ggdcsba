@@ -113,51 +113,8 @@ export const AboutPage: React.FC = () => {
         </div>
       </div>
 
-      {/* HOD Messages & Academic Faculties */}
-      <div className="space-y-6">
-        <div className="border-b border-slate-200 pb-2">
-          <h2 className="text-2xl font-black font-serif text-slate-900">
-            Academic Faculties & Heads of Departments (HODs)
-          </h2>
-          <p className="text-xs text-slate-600">
-            Departmental leadership guiding scientific research and humanities curricula.
-          </p>
-        </div>
 
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-          {departments.map((dept) => (
-            <div key={dept.id} className="bg-white rounded-3xl p-6 border-2 border-[#006837]/10 shadow-2xs hover:border-[#006837]/30 transition-all space-y-3">
-              <div className="flex items-center justify-between border-b border-slate-100 pb-3">
-                <span className="bg-[#dcfce7] text-[#006837] text-xs font-extrabold px-3 py-1 rounded-full">
-                  {dept.sanctionedPosts} Sanctioned Posts
-                </span>
-                <span className="text-xs text-slate-400 font-mono">ID: {dept.id}</span>
-              </div>
 
-              <h3 className="font-black font-serif text-lg text-slate-900">
-                {dept.name}
-              </h3>
-              
-              <p className="text-xs font-bold text-amber-700">{dept.hodTitle}</p>
-              
-              <p className="text-xs text-slate-600 italic bg-slate-50 p-3 rounded-2xl border border-slate-100 leading-relaxed">
-                "{dept.hodMessage}"
-              </p>
-
-              <div>
-                <p className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Key Subjects & Specializations:</p>
-                <div className="flex flex-wrap gap-1">
-                  {dept.subjectsOffered.map((sub, i) => (
-                    <span key={i} className="bg-[#dcfce7]/60 text-[#006837] border border-emerald-200 text-[11px] px-2.5 py-0.5 rounded-full font-bold">
-                      {sub}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-          ))}
-        </div>
-      </div>
 
       {/* Regulatory Governance & Affiliation Details */}
       <div className="bg-[#006837] text-white rounded-3xl p-6 sm:p-8 space-y-4 shadow-sm">
@@ -175,8 +132,8 @@ export const AboutPage: React.FC = () => {
             <p className="text-emerald-100">Affiliated for Intermediate HSSC (Part-I & Part-II) Examinations & Certification.</p>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl border border-white/10 text-xs">
-            <p className="font-bold text-white mb-1">Shah Abdul Latif University / SALU</p>
-            <p className="text-emerald-100">Degree awarding university affiliation for BS 4-Year Graduation Programs.</p>
+            <p className="font-bold text-white mb-1">Shaheed benazir bhutto University Shaheed Benazirabad / SBBU SBA</p>
+            <p className="text-emerald-100">Degree awarding university affiliation Degree Programs.</p>
           </div>
           <div className="bg-white/10 p-4 rounded-2xl border border-white/10 text-xs">
             <p className="font-bold text-white mb-1">Government of Sindh CED</p>

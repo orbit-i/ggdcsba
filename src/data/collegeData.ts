@@ -32,7 +32,7 @@ export const COLLEGE_INFO = {
   // Principal's Message Section
   principalName: "Prof. Nasreen Wagan",
   principalTitle: "Principal & Institutional Head",
-  principalPhotoUrl: "/images/Principle.jpeg",
+  principalPhotoUrl: "/images/head.jpeg",
   principalMessage: "The principle of Government Girls Degree College Nawabshah is overjoyed to welcome the young masons of the Nation to a never failing stream of learning as The institution ever since its creation in 1966 is true to its commitment to the highest standard of all-inclusive and wide ranging education. The fair prestige of the college manifests itself in its achievements and its contribution to the nation building by producing responsible individuals who prove to be assets for our society. The college has no compromise on curriculum; it has been a symbol of success and pride for our youth as it offers multi-dimensional opportunities to students to find out their real genius and to make it known to the world. The institution is big name of satisfaction to the students and parents alike as it has awe inspiring qualities of discipline, great administration and security with Matchless standards of conducive learning environment. The teachers are highly qualified and dedicated too, who develop a positive teacher-student communication which makes this college highly esteemed place of learning desirable for everyone.",
   principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence.",
 
@@ -198,36 +198,6 @@ export const FACILITIES: FacilityItem[] = [
     ]   */
   },
   {
-   /* id: "fac-6",
-   // name: "Air Conditioners",
-   // description: "Air-conditioned computer laboratories, digital library, auditorium, and principal office for summer comfort.",
-   // category: "Infrastructure",
-   // iconName: "Wind",
-   // highlight: "Climate Controlled Spaces",
-   // imageUrl: "",
-   // features: [
-      "Heavy-duty split and cabinet air conditioners installed across key facilities",
-      "Maintains optimal climate comfort during hot summer academic months in Shaheed Benazirabad",
-      "Prevents server overheating and protects sensitive scientific laboratory hardware",
-      "Ensures comfortable environment during long examinations and convocations"
-    ] */
-  },
-  {
-   /* id: "fac-7",
-   // name: "Solar Power Plant",
-   // description: "Eco-friendly eco-solar energy installation ensuring uninterrupted electricity supply for labs and classrooms.",
-  //  category: "Infrastructure",
-  //  iconName: "Sun",
-  //  highlight: "Uninterrupted Clean Power",
-  //  imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
-  //  features: [
-      "50+ kW heavy-duty solar panel installation with industrial battery backup storage",
-      "Zero load-shedding interruption during practical exams, computer classes, and lectures",
-      "Powers lighting, fans, computers, and laboratory scientific instruments round-the-clock",
-      "Reduces campus carbon emissions with clean green renewable energy"
-   ]  */
-  },
-  {
     id: "fac-8",
     name: "Physics Laboratory",
     description: "Fully equipped Physics practical laboratory with apparatus for mechanics, optics, and electronics experiments.",
@@ -286,8 +256,8 @@ export const FACILITIES: FacilityItem[] = [
       "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
    /] */
+
   },
-  
   {
     id: "fac-11",
     name: "Auditorium (Capacity Of 500)",
@@ -296,7 +266,7 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Building2",
     highlight: "500-Seat Multipurpose Hall",
     imageUrl: "/images/auditorium.jpeg",
-    
+
   }
   
 ];

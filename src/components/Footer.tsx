@@ -143,14 +143,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
 
           <div className="flex items-center gap-4">
             {/* Secret Hidden Superadmin Lock Button */}
-            <button
-              onClick={() => { onNavigate('admin'); scrollToTop(); }}
-              className="text-emerald-200/60 hover:text-white transition-colors flex items-center gap-1 text-[11px]"
-              title="Secret Administrative Access"
-            >
-              <Lock className="w-3 h-3 text-emerald-300" />
-               
-            </button>
+           
 
             <button
               onClick={scrollToTop}
