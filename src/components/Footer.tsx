@@ -149,7 +149,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
               title="Secret Administrative Access"
             >
               <Lock className="w-3 h-3 text-emerald-300" />
-              <span>Staff Portal</span>
+               
             </button>
 
             <button

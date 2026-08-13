@@ -274,7 +274,7 @@ export const FACILITIES: FacilityItem[] = [
   },
   {
     id: "fac-8d",
-    name: "Computer Science Lab",
+    name: "Computer Lab",
     description: "State-of-the-art computer laboratory equipped with modern systems for programming and IT coursework.",
     category: "Academic",
     iconName: "FlaskConical",
@@ -286,21 +286,6 @@ export const FACILITIES: FacilityItem[] = [
       "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
    /] */
-  },
-  {
-    id: "fac-9",
-    name: "Online Attendance & Admission Systems",
-    description: "Integrated digital attendance system, SMS notification alerts, and online admission processing.",
-    category: "Technology",
-    iconName: "UserCheck",
-    highlight: "Automated E-Governance",
-    imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000",
-  /* features: [
-      "Integrated with Sindh SECCAP portal for online admission processing",
-      "Daily digital attendance recording with automated SMS alerts sent to parents",
-      "Online merit list publication and instant fee payment verification",
-      "Digital student records desk maintaining attendance thresholds and admit cards"
-   ]    */
   },
   
   {
