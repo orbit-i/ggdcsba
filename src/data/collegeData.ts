@@ -30,7 +30,7 @@ export const COLLEGE_INFO = {
   libraryUrl: "/images/Library.jpeg",
   
   // Principal's Message Section
-  principalName: "Prof. Principal Office",
+  principalName: "Prof. Nasreen Wagan",
   principalTitle: "Principal & Institutional Head",
   principalPhotoUrl: "/images/Principle.jpeg",
   principalMessage: "The principle of Government Girls Degree College Nawabshah is overjoyed to welcome the young masons of the Nation to a never failing stream of learning as The institution ever since its creation in 1966 is true to its commitment to the highest standard of all-inclusive and wide ranging education. The fair prestige of the college manifests itself in its achievements and its contribution to the nation building by producing responsible individuals who prove to be assets for our society. The college has no compromise on curriculum; it has been a symbol of success and pride for our youth as it offers multi-dimensional opportunities to students to find out their real genius and to make it known to the world. The institution is big name of satisfaction to the students and parents alike as it has awe inspiring qualities of discipline, great administration and security with Matchless standards of conducive learning environment. The teachers are highly qualified and dedicated too, who develop a positive teacher-student communication which makes this college highly esteemed place of learning desirable for everyone.",
@@ -88,36 +88,36 @@ export const USEFUL_LINKS: UsefulLink[] = [
 
 export const ANNOUNCEMENTS: Announcement[] = [
   {
-    id: "N-2026-001",
-    title: "Admissions Open for BS 4-Year Graduation Programs under Sindh Online Admission System",
-    date: "Session 2025-2026",
-    category: "Admissions",
-    isNew: true,
-    summary: "Applications are invited for BS Computer Science, BS English, BS Chemistry, BS Botany, BS Zoology, and BS Economics. Apply online via SECCAP portal or submit form at admission desk."
+   // id: "N-2026-001",
+   // title: "Admissions Open for BS 4-Year Graduation Programs under Sindh Online Admission System",
+   // date: "Session 2025-2026",
+   // category: "Admissions",
+   // isNew: true,
+   // summary: "Applications are invited for BS Computer Science, BS English, BS Chemistry, BS Botany, BS Zoology, and BS Economics. Apply online via SECCAP portal or submit form at admission desk."
   },
   {
-    id: "N-2026-002",
-    title: "HSSC Intermediate Part-I & Part-II Annual Examination Date Sheet Published by BISE Shaheed Benazirabad",
-    date: "Current Session",
-    category: "Exams",
-    isNew: true,
-    summary: "Students must collect their official Admit Cards from the college dispatch room after clearing dues."
+   // id: "N-2026-002",
+   // title: "HSSC Intermediate Part-I & Part-II Annual Examination Date Sheet Published by BISE Shaheed Benazirabad",
+   // date: "Current Session",
+   // category: "Exams",
+   // isNew: true,
+   // summary: "Students must collect their official Admit Cards from the college dispatch room after clearing dues."
   },
   {
-    id: "N-2026-003",
-    title: "Government Merit Scholarship Notification for Underprivileged & Top Performing Female Students",
-    date: "Academic Year 2025-26",
-    category: "Notice",
-    isNew: false,
-    summary: "Government of Sindh College Education Department scholarship application deadline is extended."
+    //id: "N-2026-003",
+   // title: "Government Merit Scholarship Notification for Underprivileged & Top Performing Female Students",
+   // date: "Academic Year 2025-26",
+//    category: "Notice",
+   // isNew: false,
+  //  summary: "Government of Sindh College Education Department scholarship application deadline is extended."
   },
   {
-    id: "N-2026-004",
-    title: "E-Governance Portal & Digital Grievance Redressal System Active for Students & Guardians",
-    date: "Active Circular",
-    category: "Notice",
-    isNew: false,
-    summary: "Direct submission of feedback, inquiries, and grievances with automated tracking ID numbers."
+    // id: "N-2026-004",
+   // title: "E-Governance Portal & Digital Grievance Redressal System Active for Students & Guardians",
+   // date: "Active Circular",
+   // category: "Notice",
+   // isNew: false,
+   // summary: "Direct submission of feedback, inquiries, and grievances with automated tracking ID numbers."
   }
 ];
 
@@ -130,13 +130,13 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
     imageUrl: "/images/Library.jpeg",
-    features: [
+   // features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
       "Subscribed daily national newspapers, research journals, and academic periodicals",
       "Digital cataloguing system for rapid book search, issue, and automated return tracking",
       "Dedicated reference desk and librarian guidance for research and project work"
-    ]
+    // ]
   },
   {
     id: "fac-2",
@@ -146,11 +146,11 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "Laptop",
     highlight: "Free HEC E-Resource Access",
     imageUrl: "/images/Digital_library.jpeg",
-    features: [
+   // features: [
       "High-speed optical fiber internet computer terminals for student research",
       "Digital lecture archives and online course material downloading center",
       "High-capacity printing and scanning services for academic project submissions"
-    ]
+    // ]
   },
   {
     id: "fac-3",
@@ -159,13 +159,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Users",
     highlight: "Departmental Lounges",
-    imageUrl: "https://images.unsplash.com/photo-1497366216548-37526070297c?auto=format&fit=crop&q=80&w=1000",
-    features: [
+    imageUrl: "Staffroom.jpeg",
+   // features: [
       "Dedicated departmental staff rooms for Science, Humanities, Commerce & IT faculty",
       "Ergonomic seating and private workstations for lesson preparation and paper grading",
       "Individual student-faculty counseling desks for academic mentoring",
       "High-speed Wi-Fi network and desktop terminals for faculty administrative tasks"
-    ]
+   // ]
   },
   {
     id: "fac-4",
@@ -174,13 +174,13 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Tv",
     highlight: "Interactive Teaching Aids",
-    imageUrl: "hSmart_board.jpeg",
-    features: [
+    imageUrl: "Smart_board.jpeg",
+    // features: [
       "Interactive smart projectors and digital whiteboards in BS degree lecture halls",
       "High-resolution visual multimedia aids for complex scientific diagrams and presentations",
       "Departmental soft display boards for student poster exhibitions and academic notices",
       "Audio-visual learning tools designed to enhance conceptual retention"
-    ]
+   // ]
   },
   {
     id: "fac-5",
@@ -189,43 +189,43 @@ export const FACILITIES: FacilityItem[] = [
     category: "Technology",
     iconName: "Wifi",
     highlight: "High-Speed Campus Network",
-    imageUrl: "Wiifii.jpeg",
-    features: [
+    imageUrl: "Wifi.jpeg",
+   // features: [
       "Optical fiber internet backbone offering high-speed connectivity across campus",
       "Secure student credential login for safe educational browsing",
       "Full coverage across Central Library, Computer Labs, Auditorium, and Staff Lounges",
       "24/7 network monitoring guaranteeing reliable uptime for e-learning"
-    ]
+   // ]
   },
   {
-    id: "fac-6",
-    name: "Air Conditioners",
-    description: "Air-conditioned computer laboratories, digital library, auditorium, and principal office for summer comfort.",
-    category: "Infrastructure",
-    iconName: "Wind",
-    highlight: "Climate Controlled Spaces",
-    imageUrl: "https://images.unsplash.com/photo-1621905251189-08b45d6a269e?auto=format&fit=crop&q=80&w=1000",
-    features: [
+   // id: "fac-6",
+   // name: "Air Conditioners",
+   // description: "Air-conditioned computer laboratories, digital library, auditorium, and principal office for summer comfort.",
+   // category: "Infrastructure",
+   // iconName: "Wind",
+   // highlight: "Climate Controlled Spaces",
+   // imageUrl: "",
+   // features: [
       "Heavy-duty split and cabinet air conditioners installed across key facilities",
       "Maintains optimal climate comfort during hot summer academic months in Shaheed Benazirabad",
       "Prevents server overheating and protects sensitive scientific laboratory hardware",
       "Ensures comfortable environment during long examinations and convocations"
-    ]
+   // ]
   },
   {
-    id: "fac-7",
-    name: "Solar Power Plant",
-    description: "Eco-friendly eco-solar energy installation ensuring uninterrupted electricity supply for labs and classrooms.",
-    category: "Infrastructure",
-    iconName: "Sun",
-    highlight: "Uninterrupted Clean Power",
-    imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
-    features: [
+   // id: "fac-7",
+   // name: "Solar Power Plant",
+   // description: "Eco-friendly eco-solar energy installation ensuring uninterrupted electricity supply for labs and classrooms.",
+  //  category: "Infrastructure",
+  //  iconName: "Sun",
+  //  highlight: "Uninterrupted Clean Power",
+  //  imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
+  //  features: [
       "50+ kW heavy-duty solar panel installation with industrial battery backup storage",
       "Zero load-shedding interruption during practical exams, computer classes, and lectures",
       "Powers lighting, fans, computers, and laboratory scientific instruments round-the-clock",
       "Reduces campus carbon emissions with clean green renewable energy"
-    ]
+  //  ]
   },
   {
     id: "fac-8",
@@ -235,12 +235,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/physics_lab.jpg",
-    features: [
+    // features: [
       "Dedicated practical workstations for HSSC and BS Physics experiments",
       "Calibrated instruments for mechanics, optics, electricity, and electronics experiments",
       "Reference charts, historical scientific displays, and demonstration models",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ]
+    //]
   },
   {
     id: "fac-8b",
@@ -250,12 +250,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/chemistry_lab.jpg",
-    features: [
+   // features: [
       "Dedicated practical workstations with individual fume extraction and water taps",
       "Chemical apparatus, reagents, and glassware for organic, inorganic, and physical chemistry",
       "Reference charts and displays on foundational chemistry concepts and pioneers",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ]
+   // ]
   },
   {
     id: "fac-8c",
@@ -265,12 +265,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "/images/zoology_lab.jpg",
-    features: [
+   // features: [
       "Dedicated practical workstations for HSSC and BS Zoology students",
       "Preserved specimens, anatomical models, and classification charts",
       "Calibrated optical microscopes for cellular and specimen study",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ]
+  //  ]
   },
   {
     id: "fac-8d",
@@ -280,12 +280,12 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "FlaskConical",
     highlight: "Fully Equipped Practical Lab",
     imageUrl: "Computer_lab.jpeg",
-    features: [
+   // features: [
       "High-performance computer systems loaded with programming compilers and IDEs",
       "Dedicated practical workstations for HSSC and BS Computer Science students",
       "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
-    ]
+   // ]
   },
   {
     id: "fac-9",
@@ -295,28 +295,14 @@ export const FACILITIES: FacilityItem[] = [
     iconName: "UserCheck",
     highlight: "Automated E-Governance",
     imageUrl: "https://images.unsplash.com/photo-1434030216411-0b793f4b4173?auto=format&fit=crop&q=80&w=1000",
-    features: [
+  //  features: [
       "Integrated with Sindh SECCAP portal for online admission processing",
       "Daily digital attendance recording with automated SMS alerts sent to parents",
       "Online merit list publication and instant fee payment verification",
       "Digital student records desk maintaining attendance thresholds and admit cards"
-    ]
+  //  ]
   },
-  {
-    id: "fac-10",
-    name: "Sports Complex Facility",
-    description: "Dedicated sports ground and indoor facility for badminton, table tennis, volleyball, and athletics.",
-    category: "Sports & Culture",
-    iconName: "Trophy",
-    highlight: "Inter-College Sports Venue",
-    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000",
-    features: [
-      "Spacious outdoor sports field for athletics, volleyball matches, and physical fitness",
-      "Indoor sports hall equipped with table tennis, badminton courts, and indoor games",
-      "Host site for annual inter-college sports competitions and athletics meets",
-      "Supervised by qualified female physical education director with full gear provided"
-    ]
-  },
+  
   {
     id: "fac-11",
     name: "Auditorium (Capacity Of 500)",
@@ -324,59 +310,9 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Building2",
     highlight: "500-Seat Multipurpose Hall",
-    imageUrl: "/images/auditorium.jpg",
-    features: [
-      "Spacious air-conditioned auditorium with 500 cushioned seats and raised stage",
-      "Integrated acoustic sound system, wireless lapel microphones, and HD projector",
-      "Venue for annual convocations, prize distribution ceremonies, and guest lectures",
-      "Dedicated backstage green rooms for student performers and speaker preparation"
-    ]
-  },
-  {
-    id: "fac-12",
-    name: "First Aid Facility",
-    description: "In-campus medical dispensary equipped with emergency first aid kits, nursing bed, and qualified care.",
-    category: "Security & Amenities",
-    iconName: "HeartPulse",
-    highlight: "Immediate Medical Care",
-    imageUrl: "https://images.unsplash.com/photo-1584515979956-d9f6e5d09982?auto=format&fit=crop&q=80&w=1000",
-    features: [
-      "In-campus medical care room equipped with nursing bed and emergency kit",
-      "Qualified health attendant on duty during official college operating hours",
-      "Stocked with essential medicines, blood pressure monitors, and wound dressings",
-      "Rapid ambulance coordination protocol with nearest District Headquarters Hospital"
-    ]
-  },
-  {
-    id: "fac-13",
-    name: "Hygienic Cafeteria",
-    description: "Clean cafeteria offering fresh beverages, snacks, and meals at government subsidized student rates.",
-    category: "Security & Amenities",
-    iconName: "Utensils",
-    highlight: "Fresh & Subsidized Catering",
-    imageUrl: "https://images.unsplash.com/photo-1567521464027-f127ff144326?auto=format&fit=crop&q=80&w=1000",
-    features: [
-      "Monitored regularly by college health and sanitation oversight committee",
-      "Subsidized government pricing for fresh snacks, tea, juices, and lunch meals",
-      "Clean dining hall exclusively for female students with reverse osmosis filtered water",
-      "Fresh daily preparation utilizing high-grade ingredients"
-    ]
-  },
-  {
-    id: "fac-14",
-    name: "Beautiful Lush Green Gardens",
-    description: "Landscaped floral lawns, shade trees, and serene courtyard gardens providing a tranquil learning space.",
-    category: "Infrastructure",
-    iconName: "Trees",
-    highlight: "Eco-Friendly Green Campus",
-    imageUrl: "/images/hero_campus_1786450892079.jpg",
-    features: [
-      "Manicured lawns featuring shade trees, ornamental palms, and seasonal flowerbeds",
-      "Shaded outdoor benches and peaceful courtyard sitting spots for outdoor study",
-      "Promotes ecological balance and an eco-friendly campus environment",
-      "Botanical plant specimen section maintained for Botany department field study"
-    ]
-  },
+    imageUrl: "/images/auditorium.jpeg",
+    
+  }
   
 ];
 
@@ -565,7 +501,7 @@ export const DEPARTMENTS: DepartmentStructure[] = [
 ];
 
 export const DOWNLOADS: DownloadItem[] = [
-  {
+ /* {
     id: "dl-1",
     title: "Official BS Graduation Admission Form 2026-2027",
     category: "Admission Forms",
@@ -618,7 +554,7 @@ export const DOWNLOADS: DownloadItem[] = [
     fileFormat: "PDF",
     updatedDate: "January 05, 2026",
     description: "Govt of Sindh regulatory compliance manual on campus safety and student rights."
-  }
+  } */
 ];
 
 export const GALLERY_PHOTOS: GalleryPhoto[] = [
@@ -626,7 +562,7 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: "g1",
     title: "College Main Academic Block & Green Lawns",
     category: "Campus & Gardens",
-    imageUrl: "/images/hero_campus_1786450892079.jpg",
+    imageUrl: "/images/main_academic_block.jpeg",
     date: "2026",
     caption: "Lush green gardens and grand architectural facade of Govt Girls Degree College Nawabshah."
   },
@@ -670,28 +606,5 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     date: "2026",
     caption: "500-seat multipurpose auditorium hosting convocations, seminars, and college events."
   },
-  {
-    id: "g4",
-    title: "Annual Sports Trophy & Athletics Competition",
-    category: "Events & Sports",
-    imageUrl: "https://images.unsplash.com/photo-1574629810360-7efbbe195018?auto=format&fit=crop&q=80&w=1000",
-    date: "2026",
-    caption: "College sports complex hosting inter-department badminton, volleyball, and athletics."
-  },
-  {
-    id: "g5",
-    title: "Auditorium Convocation & Prize Distribution Ceremony",
-    category: "Auditorium",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000",
-    date: "2026",
-    caption: "500-capacity auditorium equipped with audio-visual system for academic events."
-  },
-  {
-    id: "g6",
-    title: "Eco-Friendly Solar Power Installation",
-    category: "Campus & Gardens",
-    imageUrl: "https://images.unsplash.com/photo-1509391365360-2e959784a276?auto=format&fit=crop&q=80&w=1000",
-    date: "2026",
-    caption: "Solar plant providing clean uninterrupted green energy for college laboratories."
-  }
+
 ];
