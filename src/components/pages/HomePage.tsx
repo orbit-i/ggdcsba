@@ -36,8 +36,54 @@ interface HomePageProps {
   onNavigate: (page: PageType) => void;
 }
 
+// Real academic programs — must match the Academics page exactly.
+// Kept local/hardcoded here because DataContext's `programs` array
+// currently holds outdated/fake entries (BS CS, BS English, etc.)
+const HOME_PROGRAMS = [
+  {
+    id: 1,
+    level: 'Intermediate (HSSC)',
+    title: 'F.Sc. (Pre-Medical / Pre-Engineering)',
+    description:
+      'Comprehensive pre-medical and pre-engineering curriculum for aspiring medical, dental, and engineering candidates.',
+    duration: '2 Years (Part I & II)',
+  },
+  {
+    id: 2,
+    level: 'Intermediate (HSSC)',
+    title: 'I.C.S (Computer Science)',
+    description:
+      'Intermediate program combining physics, mathematics, and computer science fundamentals.',
+    duration: '2 Years (Part I & II)',
+  },
+  {
+    id: 3,
+    level: 'Intermediate (HSSC)',
+    title: 'I.COM (Commerce)',
+    description:
+      'Foundational training in business bookkeeping, trade economics, and financial principles.',
+    duration: '2 Years (Part I & II)',
+  },
+  {
+    id: 4,
+    level: 'Undergraduate',
+    title: 'AD in Sciences (B.Sc-I & B.Sc-II)',
+    description:
+      'Associate Degree in Sciences for students continuing from HSC or equivalent qualification.',
+    duration: '2 Years',
+  },
+  {
+    id: 5,
+    level: 'Undergraduate',
+    title: 'AD in Arts (B.A-I & B.A-II)',
+    description:
+      'Associate Degree in Arts covering humanities, social sciences, and language studies.',
+    duration: '2 Years',
+  },
+];
+
 export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
-  const { collegeInfo, announcements, facilities, programs, usefulLinks } = useSiteData();
+  const { collegeInfo, announcements, facilities, usefulLinks } = useSiteData();
   const [selectedNotice, setSelectedNotice] = useState<any | null>(null);
   const [selectedFacility, setSelectedFacility] = useState<FacilityItem | null>(null);
 
@@ -408,7 +454,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 5. Academic Degree Programs */}
+      {/* 5. Academic Degree Programs (hardcoded to match Academics page — see HOME_PROGRAMS above) */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8 space-y-6">
         <div className="flex flex-col sm:flex-row sm:items-end justify-between gap-2 border-b border-slate-200 pb-3">
           <div>
@@ -429,7 +475,7 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
 
         <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6">
-          {(programs || []).slice(0, 6).map((prog) => (
+          {HOME_PROGRAMS.map((prog) => (
             <div 
               key={prog.id}
               className="bg-white rounded-xl p-5 border border-slate-200/80 shadow-2xs hover:border-[#0B6E31] transition-all space-y-3 flex flex-col justify-between"
@@ -448,7 +494,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
 
               <div className="pt-3 border-t border-slate-100 text-xs text-slate-700 space-y-1">
                 <p><strong>Duration:</strong> {prog.duration}</p>
-                <p><strong>Seats Quota:</strong> {prog.seats} Seats</p>
               </div>
             </div>
           ))}
@@ -497,4 +542,3 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
     </div>
   );
 };
-
