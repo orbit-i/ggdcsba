@@ -27,20 +27,21 @@ export const COLLEGE_INFO = {
   workingHours: "Monday to Saturday: 08:00 AM – 02:00 PM (Friday: 08:00 AM – 12:30 PM)",
   logoUrl: "/images/college_official_logo.png",
   heroCampusUrl: "/images/campus_main_2026.jpg",
-  libraryUrl: "/images/college_library_1786450908678.jpg",
+  libraryUrl: "/images/Library.jpg",
   
   // Principal's Message Section
   principalName: "Prof. Principal Office",
   principalTitle: "Principal & Institutional Head",
-  principalPhotoUrl: "/images/hero_campus_1786450892079.jpg",
-  principalMessage: "Welcome to Government Girls Degree College Nawabshah. Established in 1966 under the College Education Department, Government of Sindh, our college stands as a premier seat of learning for young women across District Shaheed Benazirabad. We are committed to fostering academic excellence, moral integrity, scientific curiosity, and digital literacy. With modern science labs, computer suites, solar energy backup, and dedicated faculty, we empower female students to achieve leadership roles in higher education and society.",
+  principalPhotoUrl: "/images/Principle.jpg",
+  principalMessage: "The principle of Government Girls Degree College Nawabshah is overjoyed to welcome the young masons of the Nation to a never failing stream of learning as The institution ever since its creation in 1966 is true to its commitment to the highest standard of all-inclusive and wide ranging education. The fair prestige of the college manifests itself in its achievements and its contribution to the nation building by producing responsible individuals who prove to be assets for our society. The college has no compromise on curriculum; it has been a symbol of success and pride for our youth as it offers multi-dimensional opportunities to students to find out their real genius and to make it known to the world. The institution is big name of satisfaction to the students and parents alike as it has awe inspiring qualities of discipline, great administration and security with Matchless standards of conducive learning environment. The teachers are highly qualified and dedicated too, who develop a positive teacher-student communication which makes this college highly esteemed place of learning desirable for everyone.",
   principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence.",
 
   // Regional Director's Message Section (placeholder — awaiting name, photo, and message text from college administration)
-  regionalDirectorName: "Regional Director, College Education",
-  regionalDirectorTitle: "Regional Director, College Education Department, Shaheed Benazirabad Region",
-  regionalDirectorPhotoUrl: "",
-  regionalDirectorMessage: "Message from the Regional Director will be published here shortly. Please provide the official name, photograph, and message text to complete this section."
+  regionalDirectorName: "Prof. Lala Rukh Baloch Regional Director, College Education",
+  regionalDirectorTitle: "Regional Director, Colleges, (BS-20), Shaheed Benazirabad Region",
+  regionalDirectorPhotoUrl: "/images/Regional_Director.jpg",
+  regionalDirectorMessage: "Girls’ education is the foundation of an educated, empowered, and progressive society. I am pleased to acknowledge the role of Government Girls Degree College, Nawabshah in providing young women with quality education and opportunities to achieve their academic and professional aspirations.I encourage our students to pursue knowledge with dedication, confidence, and a spirit of excellence. Education empowers girls to become capable, independent, and responsible citizens who can contribute meaningfully to society and the development of our nation. I appreciate the dedicated efforts of the faculty and administration in promoting quality education and creating a supportive academic environment for our students.I wish all our students continued success and a bright future."
+
 };
 
 export interface HeadOfDepartment {
