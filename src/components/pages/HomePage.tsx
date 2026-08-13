@@ -218,13 +218,20 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Principal Image & Badge */}
           <div className="md:col-span-4 flex flex-col items-center text-center space-y-3 border-b md:border-b-0 md:border-r border-slate-100 pb-6 md:pb-0 md:pr-6">
-            <div className="w-40 h-48 rounded-xl overflow-hidden border-2 border-[#0B6E31] shadow-2xs bg-slate-100">
-              <img
-                src={collegeInfo.principalPhotoUrl || collegeInfo.heroCampusUrl}
-                alt={collegeInfo.principalName}
-                className="w-full h-full object-cover"
-                referrerPolicy="no-referrer"
-              />
+            <div className="w-40 h-48 rounded-xl overflow-hidden border-2 border-[#0B6E31] shadow-2xs bg-slate-100 flex items-center justify-center">
+              {collegeInfo.principalPhotoUrl ? (
+                <img
+                  src={collegeInfo.principalPhotoUrl}
+                  alt={collegeInfo.principalName}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                  onError={(e) => {
+                    (e.target as HTMLImageElement).style.display = 'none';
+                    (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+                  }}
+                />
+              ) : null}
+              <Users className={`w-16 h-16 text-slate-300 ${collegeInfo.principalPhotoUrl ? 'hidden' : ''}`} />
             </div>
             <div>
               <h3 className="font-bold text-slate-900 text-base font-serif">
@@ -258,10 +265,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#0B6E31]" />
                 BISE Shaheed Benazirabad Affiliated
-              </span>
-              <span className="flex items-center gap-1.5">
-                <CheckCircle2 className="w-4 h-4 text-[#0B6E31]" />
-                BS 4-Year Degree Programs
               </span>
               <span className="flex items-center gap-1.5">
                 <CheckCircle2 className="w-4 h-4 text-[#0B6E31]" />
