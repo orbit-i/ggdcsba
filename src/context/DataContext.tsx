@@ -22,6 +22,7 @@ import {
   GALLERY_PHOTOS,
   USEFUL_LINKS
 } from '../data/collegeData';
+import { supabase, isSupabaseConfigured } from '../lib/supabaseClient';
 
 const DEFAULT_SANCTIONED_POSTS: SanctionedPost[] = [
   {
@@ -383,17 +384,100 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setCollegeInfo(prev => ({ ...prev, ...info }));
   };
 
+  // --- Supabase sync: on load, pull real data from the database if the site
+  // owner has connected one. If not connected, the site keeps running on the
+  // bundled static/local data below with zero errors.
+  useEffect(() => {
+    if (!isSupabaseConfigured || !supabase) return;
+
+    (async () => {
+      const { data, error } = await supabase
+        .from('notices')
+        .select('*')
+        .order('published_date', { ascending: false });
+      if (!error && data) {
+        setAnnouncements(
+          data.map((n: any) => ({
+            id: n.id,
+            title: n.title,
+            date: new Date(n.published_date).toLocaleDateString('en-US', { month: 'long', day: '2-digit', year: 'numeric' }),
+            category: n.category,
+            isNew: n.is_new,
+            fileUrl: n.file_url || undefined,
+            summary: n.summary,
+          }))
+        );
+      }
+    })();
+
+    (async () => {
+      const { data, error } = await supabase
+        .from('gallery_media')
+        .select('*')
+        .order('media_date', { ascending: false });
+      if (!error && data) {
+        setGalleryPhotos(
+          data.map((g: any) => ({
+            id: g.id,
+            title: g.title,
+            category: g.category,
+            imageUrl: g.media_url,
+            date: new Date(g.media_date).getFullYear().toString(),
+            caption: g.caption || '',
+            mediaType: g.media_type,
+          }))
+        );
+      }
+    })();
+  }, []);
+
   const addAnnouncement = (item: Omit<Announcement, 'id'>) => {
     const newId = `N-${new Date().getFullYear()}-${Math.floor(100 + Math.random() * 900)}`;
     setAnnouncements(prev => [{ id: newId, ...item }, ...prev]);
+
+    if (isSupabaseConfigured && supabase) {
+      (async () => {
+        const { data, error } = await supabase
+          .from('notices')
+          .insert({
+            title: item.title,
+            category: item.category,
+            summary: item.summary,
+            file_url: item.fileUrl || null,
+            is_new: item.isNew ?? true,
+          })
+          .select()
+          .single();
+        if (!error && data) {
+          // Replace the optimistic local id with the real database id
+          setAnnouncements(prev => prev.map(a => a.id === newId ? { ...a, id: data.id } : a));
+        }
+      })();
+    }
   };
 
   const updateAnnouncement = (id: string, item: Partial<Announcement>) => {
     setAnnouncements(prev => prev.map(a => a.id === id ? { ...a, ...item } : a));
+
+    if (isSupabaseConfigured && supabase) {
+      const payload: Record<string, any> = {};
+      if (item.title !== undefined) payload.title = item.title;
+      if (item.category !== undefined) payload.category = item.category;
+      if (item.summary !== undefined) payload.summary = item.summary;
+      if (item.fileUrl !== undefined) payload.file_url = item.fileUrl;
+      if (item.isNew !== undefined) payload.is_new = item.isNew;
+      if (Object.keys(payload).length > 0) {
+        supabase.from('notices').update(payload).eq('id', id).then(() => {});
+      }
+    }
   };
 
   const deleteAnnouncement = (id: string) => {
     setAnnouncements(prev => prev.filter(a => a.id !== id));
+
+    if (isSupabaseConfigured && supabase) {
+      supabase.from('notices').delete().eq('id', id).then(() => {});
+    }
   };
 
   const addFacility = (item: Omit<FacilityItem, 'id'>) => {
@@ -454,14 +538,49 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
   const addGalleryPhoto = (item: Omit<GalleryPhoto, 'id'>) => {
     const newId = `g-${Date.now()}`;
     setGalleryPhotos(prev => [...prev, { id: newId, ...item }]);
+
+    if (isSupabaseConfigured && supabase) {
+      (async () => {
+        const { data, error } = await supabase
+          .from('gallery_media')
+          .insert({
+            title: item.title,
+            category: item.category,
+            media_url: item.imageUrl,
+            caption: item.caption,
+            media_type: item.mediaType || 'photo',
+          })
+          .select()
+          .single();
+        if (!error && data) {
+          setGalleryPhotos(prev => prev.map(g => g.id === newId ? { ...g, id: data.id } : g));
+        }
+      })();
+    }
   };
 
   const updateGalleryPhoto = (id: string, item: Partial<GalleryPhoto>) => {
     setGalleryPhotos(prev => prev.map(g => g.id === id ? { ...g, ...item } : g));
+
+    if (isSupabaseConfigured && supabase) {
+      const payload: Record<string, any> = {};
+      if (item.title !== undefined) payload.title = item.title;
+      if (item.category !== undefined) payload.category = item.category;
+      if (item.imageUrl !== undefined) payload.media_url = item.imageUrl;
+      if (item.caption !== undefined) payload.caption = item.caption;
+      if (item.mediaType !== undefined) payload.media_type = item.mediaType;
+      if (Object.keys(payload).length > 0) {
+        supabase.from('gallery_media').update(payload).eq('id', id).then(() => {});
+      }
+    }
   };
 
   const deleteGalleryPhoto = (id: string) => {
     setGalleryPhotos(prev => prev.filter(g => g.id !== id));
+
+    if (isSupabaseConfigured && supabase) {
+      supabase.from('gallery_media').delete().eq('id', id).then(() => {});
+    }
   };
 
   const addSanctionedPost = (item: Omit<SanctionedPost, 'id'>) => {

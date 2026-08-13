@@ -32,6 +32,7 @@ import {
   Award
 } from 'lucide-react';
 import { useSiteData } from '../../context/DataContext';
+import { supabase, isSupabaseConfigured, uploadMedia } from '../../lib/supabaseClient';
 import { Announcement, FacilityItem, ProgramItem, FeeItem, DownloadItem, GalleryPhoto, DepartmentStructure, SanctionedPost, UsefulLink } from '../../types';
 
 export const SuperAdminDashboard: React.FC = () => {
@@ -80,26 +81,69 @@ export const SuperAdminDashboard: React.FC = () => {
     importDataJSON
   } = useSiteData();
 
-  // Authentication state
+  // Authentication state — uses real Supabase Auth when the backend is
+  // connected. Falls back to a local demo passcode only when no backend
+  // is configured yet (so the panel remains explorable before go-live).
   const [isAuthenticated, setIsAuthenticated] = useState<boolean>(
     () => sessionStorage.getItem('ggdcn_admin_auth') === 'true'
   );
+  const [email, setEmail] = useState('');
   const [passcode, setPasscode] = useState('');
   const [passError, setPassError] = useState('');
+  const [authLoading, setAuthLoading] = useState(false);
 
-  const handleLogin = (e: React.FormEvent) => {
+  // Keep session in sync with Supabase Auth (handles token refresh / logout elsewhere)
+  React.useEffect(() => {
+    if (!isSupabaseConfigured || !supabase) return;
+    supabase.auth.getSession().then(({ data }) => {
+      if (data.session) {
+        setIsAuthenticated(true);
+        sessionStorage.setItem('ggdcn_admin_auth', 'true');
+      }
+    });
+    const { data: listener } = supabase.auth.onAuthStateChange((_event, session) => {
+      if (session) {
+        setIsAuthenticated(true);
+        sessionStorage.setItem('ggdcn_admin_auth', 'true');
+      } else {
+        setIsAuthenticated(false);
+        sessionStorage.removeItem('ggdcn_admin_auth');
+      }
+    });
+    return () => listener.subscription.unsubscribe();
+  }, []);
+
+  const handleLogin = async (e: React.FormEvent) => {
     e.preventDefault();
+    setPassError('');
+
+    if (isSupabaseConfigured && supabase) {
+      setAuthLoading(true);
+      const { error } = await supabase.auth.signInWithPassword({ email, password: passcode });
+      setAuthLoading(false);
+      if (error) {
+        setPassError(error.message || 'Invalid email or password.');
+        return;
+      }
+      setIsAuthenticated(true);
+      sessionStorage.setItem('ggdcn_admin_auth', 'true');
+      return;
+    }
+
+    // Demo-mode fallback (no backend connected yet)
     const storedPass = localStorage.getItem('ggdcn_admin_passcode') || 'ggdcn2026';
     if (passcode === storedPass || passcode === 'admin123' || passcode === 'ggdcn2026') {
       setIsAuthenticated(true);
       sessionStorage.setItem('ggdcn_admin_auth', 'true');
-      setPassError('');
     } else {
       setPassError('Invalid Administrative Passcode. Please try again.');
     }
   };
 
   const handleLogout = () => {
+    if (isSupabaseConfigured && supabase) {
+      supabase.auth.signOut();
+    }
     setIsAuthenticated(false);
     sessionStorage.removeItem('ggdcn_admin_auth');
   };
@@ -173,8 +217,11 @@ export const SuperAdminDashboard: React.FC = () => {
     category: 'Campus & Gardens',
     imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000',
     date: '2026',
-    caption: ''
+    caption: '',
+    mediaType: 'photo'
   });
+  const [mediaUploading, setMediaUploading] = useState(false);
+  const [mediaUploadError, setMediaUploadError] = useState('');
 
   // State for adding new Sanctioned Post
   const [newPost, setNewPost] = useState<Omit<SanctionedPost, 'id'>>({
@@ -203,15 +250,37 @@ export const SuperAdminDashboard: React.FC = () => {
         </div>
 
         <form onSubmit={handleLogin} className="space-y-4">
+          {isSupabaseConfigured ? (
+            <div>
+              <label className="block text-xs font-bold text-slate-700 mb-1">Admin Email</label>
+              <input
+                type="email"
+                value={email}
+                onChange={(e) => setEmail(e.target.value)}
+                placeholder="principal@ggdcnawabshah.edu.pk"
+                className="w-full border border-slate-300 rounded p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E31]"
+                required
+                autoComplete="username"
+              />
+            </div>
+          ) : (
+            <div className="text-[11px] text-amber-700 bg-amber-50 border border-amber-200 rounded p-2.5">
+              Backend not connected yet — running in local demo mode. Data entered here will not be saved permanently until a Supabase project is connected (see README).
+            </div>
+          )}
+
           <div>
-            <label className="block text-xs font-bold text-slate-700 mb-1">Passcode / PIN</label>
+            <label className="block text-xs font-bold text-slate-700 mb-1">
+              {isSupabaseConfigured ? 'Password' : 'Passcode / PIN'}
+            </label>
             <input
               type="password"
               value={passcode}
               onChange={(e) => setPasscode(e.target.value)}
-              placeholder="Enter PIN (default: ggdcn2026)"
+              placeholder={isSupabaseConfigured ? 'Enter your password' : 'Enter PIN (default: ggdcn2026)'}
               className="w-full border border-slate-300 rounded p-2.5 text-sm focus:outline-none focus:ring-2 focus:ring-[#0B6E31]"
               required
+              autoComplete="current-password"
             />
           </div>
 
@@ -223,10 +292,11 @@ export const SuperAdminDashboard: React.FC = () => {
 
           <button
             type="submit"
-            className="w-full bg-[#0B6E31] hover:bg-emerald-800 text-white font-bold text-xs py-3 rounded transition-all shadow-xs flex items-center justify-center gap-2"
+            disabled={authLoading}
+            className="w-full bg-[#0B6E31] hover:bg-emerald-800 text-white font-bold text-xs py-3 rounded transition-all shadow-xs flex items-center justify-center gap-2 disabled:opacity-60"
           >
             <ShieldCheck className="w-4 h-4" />
-            <span>Access Administrative CMS</span>
+            <span>{authLoading ? 'Verifying…' : 'Access Administrative CMS'}</span>
           </button>
         </form>
 
@@ -1158,7 +1228,27 @@ export const SuperAdminDashboard: React.FC = () => {
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-3">
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Photo Title</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Media Type</label>
+                <div className="flex gap-2">
+                  <button
+                    type="button"
+                    onClick={() => setNewPhoto({ ...newPhoto, mediaType: 'photo' })}
+                    className={`flex-1 text-xs font-bold py-2 rounded-2xl border ${newPhoto.mediaType !== 'video' ? 'bg-[#006837] text-white border-[#006837]' : 'bg-slate-50 text-slate-600 border-slate-200'}`}
+                  >
+                    Photo
+                  </button>
+                  <button
+                    type="button"
+                    onClick={() => setNewPhoto({ ...newPhoto, mediaType: 'video' })}
+                    className={`flex-1 text-xs font-bold py-2 rounded-2xl border ${newPhoto.mediaType === 'video' ? 'bg-[#006837] text-white border-[#006837]' : 'bg-slate-50 text-slate-600 border-slate-200'}`}
+                  >
+                    Video
+                  </button>
+                </div>
+              </div>
+
+              <div>
+                <label className="block text-xs font-bold text-slate-700 mb-1">Title</label>
                 <input
                   type="text"
                   placeholder="e.g. Science Exhibition 2026..."
@@ -1183,8 +1273,38 @@ export const SuperAdminDashboard: React.FC = () => {
                 </select>
               </div>
 
+              <div className="sm:col-span-2">
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  Upload {newPhoto.mediaType === 'video' ? 'Video' : 'Photo'} File {!isSupabaseConfigured && '(requires backend connection)'}
+                </label>
+                <input
+                  type="file"
+                  accept={newPhoto.mediaType === 'video' ? 'video/*' : 'image/*'}
+                  disabled={!isSupabaseConfigured || mediaUploading}
+                  onChange={async (e) => {
+                    const file = e.target.files?.[0];
+                    if (!file) return;
+                    setMediaUploadError('');
+                    setMediaUploading(true);
+                    try {
+                      const url = await uploadMedia(file, newPhoto.mediaType === 'video' ? 'videos' : 'photos');
+                      setNewPhoto(prev => ({ ...prev, imageUrl: url }));
+                    } catch (err: any) {
+                      setMediaUploadError(err.message || 'Upload failed.');
+                    } finally {
+                      setMediaUploading(false);
+                    }
+                  }}
+                  className="w-full bg-slate-50 border border-slate-200 rounded-2xl p-2 text-xs font-bold text-slate-900 disabled:opacity-50"
+                />
+                {mediaUploading && <p className="text-[10px] text-slate-500 mt-1">Uploading…</p>}
+                {mediaUploadError && <p className="text-[10px] text-red-600 mt-1">{mediaUploadError}</p>}
+              </div>
+
               <div>
-                <label className="block text-xs font-bold text-slate-700 mb-1">Image URL</label>
+                <label className="block text-xs font-bold text-slate-700 mb-1">
+                  {newPhoto.mediaType === 'video' ? 'Video URL' : 'Image URL'} (auto-filled after upload, or paste your own)
+                </label>
                 <input
                   type="text"
                   value={newPhoto.imageUrl}
@@ -1207,32 +1327,37 @@ export const SuperAdminDashboard: React.FC = () => {
 
             <button
               onClick={() => {
-                if (!newPhoto.title.trim()) return alert("Enter photo title!");
+                if (!newPhoto.title.trim()) return alert("Enter a title!");
                 addGalleryPhoto(newPhoto);
                 setNewPhoto({
                   title: '',
                   category: 'Campus & Gardens',
                   imageUrl: 'https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000',
                   date: '2026',
-                  caption: ''
+                  caption: '',
+                  mediaType: 'photo'
                 });
-                showToast("Gallery Photo Added!");
+                showToast(newPhoto.mediaType === 'video' ? "Video Added to Gallery!" : "Gallery Photo Added!");
               }}
               className="bg-[#006837] text-white font-extrabold text-xs px-5 py-2 rounded-full flex items-center gap-1.5"
             >
               <Plus className="w-4 h-4 text-amber-300" />
-              <span>Add Photo</span>
+              <span>Add {newPhoto.mediaType === 'video' ? 'Video' : 'Photo'}</span>
             </button>
           </div>
 
           <div className="bg-white rounded-3xl p-6 border-2 border-[#006837]/10 shadow-sm space-y-4">
-            <h2 className="text-lg font-black font-serif text-slate-900">Manage Photos ({galleryPhotos.length})</h2>
+            <h2 className="text-lg font-black font-serif text-slate-900">Manage Gallery ({galleryPhotos.length})</h2>
 
             <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-4">
               {galleryPhotos.map((g) => (
                 <div key={g.id} className="p-3 bg-slate-50 rounded-2xl border border-slate-200 space-y-2">
                   <div className="h-32 rounded-xl overflow-hidden bg-slate-200">
-                    <img src={g.imageUrl} alt={g.title} className="w-full h-full object-cover" />
+                    {g.mediaType === 'video' ? (
+                      <video src={g.imageUrl} className="w-full h-full object-cover" controls muted />
+                    ) : (
+                      <img src={g.imageUrl} alt={g.title} className="w-full h-full object-cover" />
+                    )}
                   </div>
 
                   <input

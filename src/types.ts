@@ -83,6 +83,7 @@ export interface GalleryPhoto {
   imageUrl: string;
   date: string;
   caption: string;
+  mediaType?: 'photo' | 'video';
 }
 
 export interface DepartmentStructure {

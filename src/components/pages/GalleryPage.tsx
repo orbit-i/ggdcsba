@@ -58,12 +58,21 @@ export const GalleryPage: React.FC = () => {
             className="bg-white rounded-2xl overflow-hidden border border-emerald-100 shadow-2xs hover:shadow-lg transition-all group cursor-pointer"
           >
             <div className="relative h-56 overflow-hidden bg-slate-900">
-              <img 
-                src={photo.imageUrl} 
-                alt={photo.title}
-                className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
-                referrerPolicy="no-referrer"
-              />
+              {photo.mediaType === 'video' ? (
+                <video 
+                  src={photo.imageUrl}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  muted
+                  playsInline
+                />
+              ) : (
+                <img 
+                  src={photo.imageUrl} 
+                  alt={photo.title}
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
+                  referrerPolicy="no-referrer"
+                />
+              )}
               <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-transparent to-transparent opacity-60 group-hover:opacity-80 transition-opacity" />
               
               <div className="absolute top-3 left-3">
@@ -99,12 +108,21 @@ export const GalleryPage: React.FC = () => {
         {activePhoto && (
           <div className="space-y-4">
             <div className="rounded-xl overflow-hidden border border-emerald-200 max-h-[70vh]">
-              <img 
-                src={activePhoto.imageUrl} 
-                alt={activePhoto.title}
-                className="w-full h-auto object-contain max-h-[60vh] mx-auto bg-black"
-                referrerPolicy="no-referrer"
-              />
+              {activePhoto.mediaType === 'video' ? (
+                <video 
+                  src={activePhoto.imageUrl}
+                  className="w-full h-auto object-contain max-h-[60vh] mx-auto bg-black"
+                  controls
+                  autoPlay
+                />
+              ) : (
+                <img 
+                  src={activePhoto.imageUrl} 
+                  alt={activePhoto.title}
+                  className="w-full h-auto object-contain max-h-[60vh] mx-auto bg-black"
+                  referrerPolicy="no-referrer"
+                />
+              )}
             </div>
             
             <div className="space-y-1">

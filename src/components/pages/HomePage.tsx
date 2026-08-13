@@ -123,7 +123,51 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
         </div>
       </section>
 
-      {/* 2. Principal's Message & Leadership */}
+      {/* 2. Regional Director's Message */}
+      <section className="max-w-7xl mx-auto px-4 sm:px-8">
+        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
+          {/* Regional Director Image & Badge */}
+          <div className="md:col-span-4 flex flex-col items-center text-center space-y-3 border-b md:border-b-0 md:border-r border-slate-100 pb-6 md:pb-0 md:pr-6">
+            <div className="w-40 h-48 rounded-xl overflow-hidden border-2 border-[#0B6E31] shadow-2xs bg-slate-100 flex items-center justify-center">
+              {collegeInfo.regionalDirectorPhotoUrl ? (
+                <img
+                  src={collegeInfo.regionalDirectorPhotoUrl}
+                  alt={collegeInfo.regionalDirectorName}
+                  className="w-full h-full object-cover"
+                  referrerPolicy="no-referrer"
+                />
+              ) : (
+                <Users className="w-16 h-16 text-slate-300" />
+              )}
+            </div>
+            <div>
+              <h3 className="font-bold text-slate-900 text-base font-serif">
+                {collegeInfo.regionalDirectorName}
+              </h3>
+              <p className="text-xs font-semibold text-[#0B6E31] uppercase tracking-wide mt-0.5">
+                {collegeInfo.regionalDirectorTitle}
+              </p>
+              <p className="text-[11px] text-slate-500 mt-0.5">
+                College Education Department, Government of Sindh
+              </p>
+            </div>
+          </div>
+
+          {/* Regional Director Message Content */}
+          <div className="md:col-span-8 space-y-4">
+            <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0B6E31] uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">
+              <Award className="w-4 h-4 text-[#0B6E31]" />
+              <span>Regional Director's Message</span>
+            </div>
+
+            <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
+              {collegeInfo.regionalDirectorMessage}
+            </p>
+          </div>
+        </div>
+      </section>
+
+      {/* 2b. Principal's Message & Leadership */}
       <section className="max-w-7xl mx-auto px-4 sm:px-8">
         <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
           {/* Principal Image & Badge */}
@@ -178,50 +222,6 @@ export const HomePage: React.FC<HomePageProps> = ({ onNavigate }) => {
                 Sindh Govt SECCAP Portal
               </span>
             </div>
-          </div>
-        </div>
-      </section>
-
-      {/* 2b. Regional Director's Message */}
-      <section className="max-w-7xl mx-auto px-4 sm:px-8">
-        <div className="bg-white rounded-2xl border border-slate-200/80 shadow-2xs p-6 sm:p-8 grid grid-cols-1 md:grid-cols-12 gap-8 items-center">
-          {/* Regional Director Image & Badge */}
-          <div className="md:col-span-4 flex flex-col items-center text-center space-y-3 border-b md:border-b-0 md:border-r border-slate-100 pb-6 md:pb-0 md:pr-6">
-            <div className="w-40 h-48 rounded-xl overflow-hidden border-2 border-[#0B6E31] shadow-2xs bg-slate-100 flex items-center justify-center">
-              {collegeInfo.regionalDirectorPhotoUrl ? (
-                <img
-                  src={collegeInfo.regionalDirectorPhotoUrl}
-                  alt={collegeInfo.regionalDirectorName}
-                  className="w-full h-full object-cover"
-                  referrerPolicy="no-referrer"
-                />
-              ) : (
-                <Users className="w-16 h-16 text-slate-300" />
-              )}
-            </div>
-            <div>
-              <h3 className="font-bold text-slate-900 text-base font-serif">
-                {collegeInfo.regionalDirectorName}
-              </h3>
-              <p className="text-xs font-semibold text-[#0B6E31] uppercase tracking-wide mt-0.5">
-                {collegeInfo.regionalDirectorTitle}
-              </p>
-              <p className="text-[11px] text-slate-500 mt-0.5">
-                College Education Department, Government of Sindh
-              </p>
-            </div>
-          </div>
-
-          {/* Regional Director Message Content */}
-          <div className="md:col-span-8 space-y-4">
-            <div className="inline-flex items-center gap-2 text-xs font-extrabold text-[#0B6E31] uppercase tracking-wider bg-emerald-50 px-3 py-1 rounded-md border border-emerald-100">
-              <Award className="w-4 h-4 text-[#0B6E31]" />
-              <span>Regional Director's Message</span>
-            </div>
-
-            <p className="text-slate-700 text-xs sm:text-sm leading-relaxed">
-              {collegeInfo.regionalDirectorMessage}
-            </p>
           </div>
         </div>
       </section>

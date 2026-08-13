@@ -128,7 +128,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Academic",
     iconName: "BookOpen",
     highlight: "15,000+ Academic Volumes",
-    imageUrl: "/images/college_library_1786450908678.jpg",
+    imageUrl: "/images/central_library.jpg",
     features: [
       "Over 15,000 physical textbooks and references for Science, Arts, Commerce & BS degrees",
       "Quiet, climate-controlled reading hall with comfortable seating for 150+ students",
@@ -146,9 +146,7 @@ export const FACILITIES: FacilityItem[] = [
     highlight: "Free HEC E-Resource Access",
     imageUrl: "https://images.unsplash.com/photo-1524995997946-a1c2e315a42f?auto=format&fit=crop&q=80&w=1000",
     features: [
-      "Direct portal access to Higher Education Commission (HEC) National Digital Repository",
       "High-speed optical fiber internet computer terminals for student research",
-      "Free access to international e-journals, research publications, and e-books",
       "Digital lecture archives and online course material downloading center",
       "High-capacity printing and scanning services for academic project submissions"
     ]
@@ -230,16 +228,61 @@ export const FACILITIES: FacilityItem[] = [
   },
   {
     id: "fac-8",
-    name: "Computing & Science Labs Facilities",
-    description: "State-of-the-art Computer Science, Physics, Chemistry, Botany, and Zoology practical laboratories.",
+    name: "Physics Laboratory",
+    description: "Fully equipped Physics practical laboratory with apparatus for mechanics, optics, and electronics experiments.",
     category: "Academic",
     iconName: "FlaskConical",
-    highlight: "Fully Equipped Practical Labs",
+    highlight: "Fully Equipped Practical Lab",
+    imageUrl: "/images/physics_lab.jpg",
+    features: [
+      "Dedicated practical workstations for HSSC and BS Physics experiments",
+      "Calibrated instruments for mechanics, optics, electricity, and electronics experiments",
+      "Reference charts, historical scientific displays, and demonstration models",
+      "Strict safety protocols supervised by qualified lab assistants and technical staff"
+    ]
+  },
+  {
+    id: "fac-8b",
+    name: "Chemistry Laboratory",
+    description: "Fully equipped Chemistry practical laboratory with apparatus and reagents for organic, inorganic, and physical chemistry.",
+    category: "Academic",
+    iconName: "FlaskConical",
+    highlight: "Fully Equipped Practical Lab",
+    imageUrl: "/images/chemistry_lab.jpg",
+    features: [
+      "Dedicated practical workstations with individual fume extraction and water taps",
+      "Chemical apparatus, reagents, and glassware for organic, inorganic, and physical chemistry",
+      "Reference charts and displays on foundational chemistry concepts and pioneers",
+      "Strict safety protocols supervised by qualified lab assistants and technical staff"
+    ]
+  },
+  {
+    id: "fac-8c",
+    name: "Zoology Laboratory",
+    description: "Fully equipped Zoology practical laboratory with specimens, models, and microscopy stations for animal biology.",
+    category: "Academic",
+    iconName: "FlaskConical",
+    highlight: "Fully Equipped Practical Lab",
+    imageUrl: "/images/zoology_lab.jpg",
+    features: [
+      "Dedicated practical workstations for HSSC and BS Zoology students",
+      "Preserved specimens, anatomical models, and classification charts",
+      "Calibrated optical microscopes for cellular and specimen study",
+      "Strict safety protocols supervised by qualified lab assistants and technical staff"
+    ]
+  },
+  {
+    id: "fac-8d",
+    name: "Computer Science Lab",
+    description: "State-of-the-art computer laboratory equipped with modern systems for programming and IT coursework.",
+    category: "Academic",
+    iconName: "FlaskConical",
+    highlight: "Fully Equipped Practical Lab",
     imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000",
     features: [
-      "Dedicated state-of-the-art practical laboratories for Physics, Chemistry, Botany, Zoology & CS",
       "High-performance computer systems loaded with programming compilers and IDEs",
-      "Calibrated optical microscopes, chemical apparatus, spectrophotometers, and models",
+      "Dedicated practical workstations for HSSC and BS Computer Science students",
+      "High-speed internet connectivity for research and project submissions",
       "Strict safety protocols supervised by qualified lab assistants and technical staff"
     ]
   },
@@ -280,7 +323,7 @@ export const FACILITIES: FacilityItem[] = [
     category: "Infrastructure",
     iconName: "Building2",
     highlight: "500-Seat Multipurpose Hall",
-    imageUrl: "https://images.unsplash.com/photo-1540575467063-178a50c2df87?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/auditorium.jpg",
     features: [
       "Spacious air-conditioned auditorium with 500 cushioned seats and raised stage",
       "Integrated acoustic sound system, wireless lapel microphones, and HD projector",
@@ -604,17 +647,41 @@ export const GALLERY_PHOTOS: GalleryPhoto[] = [
     id: "g2",
     title: "Central Library & Quiet Reading Room",
     category: "Academics",
-    imageUrl: "/images/college_library_1786450908678.jpg",
+    imageUrl: "/images/central_library.jpg",
     date: "2026",
     caption: "Spacious central library providing quiet research facilities and e-reference access."
   },
   {
     id: "g3",
-    title: "Science & Computer Practical Laboratories",
+    title: "Physics Laboratory",
     category: "Labs & Tech",
-    imageUrl: "https://images.unsplash.com/photo-1562774053-701939374585?auto=format&fit=crop&q=80&w=1000",
+    imageUrl: "/images/physics_lab.jpg",
     date: "2026",
-    caption: "Modern computing equipment and chemistry apparatus for hands-on student learning."
+    caption: "Physics practical laboratory equipped for mechanics, optics, and electronics experiments."
+  },
+  {
+    id: "g3b",
+    title: "Chemistry Laboratory",
+    category: "Labs & Tech",
+    imageUrl: "/images/chemistry_lab.jpg",
+    date: "2026",
+    caption: "Chemistry practical laboratory equipped with reagents and apparatus for hands-on learning."
+  },
+  {
+    id: "g3c",
+    title: "Zoology Laboratory",
+    category: "Labs & Tech",
+    imageUrl: "/images/zoology_lab.jpg",
+    date: "2026",
+    caption: "Zoology laboratory with specimens, models, and microscopy stations."
+  },
+  {
+    id: "g3d",
+    title: "Auditorium",
+    category: "Auditorium",
+    imageUrl: "/images/auditorium.jpg",
+    date: "2026",
+    caption: "500-seat multipurpose auditorium hosting convocations, seminars, and college events."
   },
   {
     id: "g4",
