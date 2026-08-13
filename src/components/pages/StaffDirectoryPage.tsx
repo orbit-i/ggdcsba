@@ -54,21 +54,6 @@ export const StaffDirectoryPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Compliance Directive Notice Box (Strictly adheres to "No fake staff data" rule) */}
-      <div className="bg-amber-50 border-2 border-amber-300 rounded-2xl p-6 shadow-2xs space-y-3">
-        <div className="flex items-center gap-2 text-amber-900 font-bold text-sm">
-          <AlertCircle className="w-5 h-5 text-amber-700 shrink-0" />
-          <span>Official Roster & Data Integrity Guidelines</span>
-        </div>
-        <p className="text-xs sm:text-sm text-slate-800 leading-relaxed">
-          In strict compliance with Department of College Education Government of Sindh directives, this portal displays the official <strong>Sanctioned Organizational Structure & Cadre Posts</strong>. To prevent unauthorized or non-verified personnel data publishing, individual staff profiles are updated directly by the College Principal's Office and IT Wing.
-        </p>
-        <div className="text-xs text-amber-950 font-medium flex items-center gap-2 bg-amber-100/80 p-2.5 rounded-lg border border-amber-200">
-          <ShieldCheck className="w-4 h-4 text-emerald-700 shrink-0" />
-          <span>Verified Roster Code: SINDH-CED-GGDCN-STAFF-2026</span>
-        </div>
-      </div>
-
     </div>
   );
 };
