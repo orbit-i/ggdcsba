@@ -18,16 +18,7 @@ export const FacilityDetailModal: React.FC<FacilityDetailModalProps> = ({
 }) => {
   if (!facility) return null;
 
-  // Fallback images based on facility category
-  const fallbackImage = facility.category === 'Academic' 
-    ? "#"
-    : facility.category === 'Technology'
-    ? "#"
-    : facility.category === 'Sports & Culture'
-    ? "#"
-    : "#";
-
-  const displayImage = facility.imageUrl || fallbackImage;
+  const hasImage = Boolean(facility.imageUrl);
 
   return (
     <Modal
@@ -38,15 +29,25 @@ export const FacilityDetailModal: React.FC<FacilityDetailModalProps> = ({
     >
       <div className="space-y-6">
         {/* Facility Main Banner Image */}
-        <div className="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden border border-slate-200 shadow-xs group">
-          <img
-            src={displayImage}
-            alt={facility.name}
-            className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
-            onError={(e) => {
-              (e.target as HTMLImageElement).src = fallbackImage;
-            }}
-          />
+        <div className="relative h-56 sm:h-64 w-full rounded-xl overflow-hidden border border-slate-200 shadow-xs group bg-emerald-50">
+          {hasImage ? (
+            <img
+              src={facility.imageUrl}
+              alt={facility.name}
+              className="w-full h-full object-cover object-center transform group-hover:scale-105 transition-transform duration-500"
+              onError={(e) => {
+                // Hide broken image and fall back to icon placeholder instead of an invalid src
+                (e.target as HTMLImageElement).style.display = 'none';
+                (e.target as HTMLImageElement).nextElementSibling?.classList.remove('hidden');
+              }}
+            />
+          ) : null}
+
+          {/* Icon placeholder — shown when there's no image, or the image fails to load */}
+          <div className={`w-full h-full flex items-center justify-center ${hasImage ? 'hidden' : ''}`}>
+            <Building2 className="w-12 h-12 text-emerald-300" />
+          </div>
+
           <div className="absolute inset-0 bg-gradient-to-t from-slate-950/80 via-slate-950/20 to-transparent"></div>
 
           {/* Badges on Banner */}

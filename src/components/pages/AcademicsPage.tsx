@@ -1,11 +1,10 @@
-import React, { useState } from 'react';
-import { useSiteData } from '../../context/DataContext';
-import { GraduationCap, BookOpen, CheckCircle2, FileText, ArrowRight, Clock, Users, Laptop } from 'lucide-react';
-import { ProgramItem } from '../../types';
+import React from 'react';
+import { GraduationCap, CheckCircle2, FileText, Landmark, Users2, Sigma } from 'lucide-react';
 
 const faculties = [
   {
     name: 'Faculty of Science and Technology',
+    icon: Sigma,
     departments: [
       'Computer Science Department',
       'Chemistry Department',
@@ -18,6 +17,7 @@ const faculties = [
   },
   {
     name: 'Faculty of Social Sciences and Humanities',
+    icon: Users2,
     departments: [
       'Political Science Department',
       'Islamic Culture Department',
@@ -29,6 +29,7 @@ const faculties = [
   },
   {
     name: 'Faculty of Management Sciences',
+    icon: Landmark,
     departments: [
       'Commerce Department',
       'Economics Department',
@@ -36,17 +37,21 @@ const faculties = [
   },
 ];
 
+const programOfferedRow1 = [
+  'F.Sc. (Pre-Medical - Pre-Engineering)',
+  'I.C.S',
+  'I.COM',
+];
+
+const programOfferedRow2 = [
+  'AD In Sciences',
+  'AD In Arts',
+];
+
 export const AcademicsPage: React.FC = () => {
-  const { programs } = useSiteData();
-  const [activeTab, setActiveTab] = useState<'All' | 'Undergraduate (BS 4-Year)' | 'Intermediate (HSSC)'>('All');
-
-  const filteredPrograms = activeTab === 'All' 
-    ? programs 
-    : programs.filter(p => p.level === activeTab);
-
   return (
     <div className="max-w-7xl mx-auto px-4 sm:px-8 py-8 space-y-10">
-      
+
       {/* Title Banner */}
       <div className="bg-emerald-900 text-white p-8 rounded-2xl shadow-md border-b-4 border-amber-400 flex flex-col md:flex-row items-start md:items-center justify-between gap-4">
         <div>
@@ -67,86 +72,6 @@ export const AcademicsPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Program Filter Tabs */}
-      <div className="flex flex-wrap gap-2 border-b border-emerald-200 pb-2">
-        {(['All', 'Undergraduate (BS 4-Year)', 'Intermediate (HSSC)'] as const).map((tab) => (
-          <button
-            key={tab}
-            onClick={() => setActiveTab(tab)}
-            className={`px-4 py-2 rounded-xl text-xs font-bold transition-all ${
-              activeTab === tab
-                ? 'bg-emerald-800 text-white shadow'
-                : 'bg-emerald-50 text-emerald-900 hover:bg-emerald-100 border border-emerald-200'
-            }`}
-          >
-            {tab === 'All' ? 'All Academic Programs' : tab}
-          </button>
-        ))}
-      </div>
-
-      {/* Programs Grid */}
-      <div className="grid grid-cols-1 md:grid-cols-2 gap-6">
-        {filteredPrograms.map((prog) => (
-          <div 
-            key={prog.id}
-            className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-2xs hover:shadow-md transition-all border-l-4 border-l-emerald-600 flex flex-col justify-between"
-          >
-            <div className="space-y-3">
-              <div className="flex items-center justify-between gap-2">
-                <span className="bg-emerald-100 text-emerald-900 text-xs font-bold px-2.5 py-0.5 rounded">
-                  {prog.level}
-                </span>
-                <span className="text-xs text-amber-700 font-semibold flex items-center gap-1">
-                  <Clock className="w-3.5 h-3.5" />
-                  {prog.duration}
-                </span>
-              </div>
-
-              <h3 className="text-xl font-bold font-serif text-emerald-950">
-                {prog.title}
-              </h3>
-
-              <p className="text-xs text-slate-600 leading-relaxed">
-                {prog.description}
-              </p>
-
-              <div className="bg-slate-50 p-3 rounded-xl border border-slate-200 space-y-1.5 text-xs">
-                <div className="flex items-start gap-1.5">
-                  <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
-                  <p className="text-slate-700">
-                    <strong className="text-slate-900">Eligibility:</strong> {prog.eligibility}
-                  </p>
-                </div>
-                <div className="flex items-center gap-1.5">
-                  <Users className="w-4 h-4 text-amber-600 shrink-0" />
-                  <p className="text-slate-700">
-                    <strong className="text-slate-900">Sanctioned Seats:</strong> {prog.seats} Seats per batch
-                  </p>
-                </div>
-              </div>
-
-              <div>
-                <p className="text-[11px] font-bold text-slate-700 uppercase tracking-wider mb-1">Subjects & Departments:</p>
-                <div className="flex flex-wrap gap-1">
-                  {prog.departments.map((dept, i) => (
-                    <span key={i} className="bg-emerald-50 text-emerald-800 text-[11px] font-medium px-2 py-0.5 rounded border border-emerald-100">
-                      {dept}
-                    </span>
-                  ))}
-                </div>
-              </div>
-            </div>
-
-            <div className="pt-4 border-t border-slate-100 mt-4 flex items-center justify-between">
-              <span className="text-[11px] text-slate-500 font-mono">Code: {prog.id}</span>
-              <button className="text-xs font-bold text-emerald-800 hover:text-emerald-900 flex items-center gap-1">
-                Admission Rules <ArrowRight className="w-3.5 h-3.5" />
-              </button>
-            </div>
-          </div>
-        ))}
-      </div>
-
       {/* Faculties & Departments */}
       <div className="space-y-6">
         <div className="flex items-center gap-2 text-emerald-900 text-xs font-bold uppercase tracking-wider">
@@ -154,53 +79,67 @@ export const AcademicsPage: React.FC = () => {
           Programs Offered
         </div>
 
-        <div className="bg-sky-400/80 rounded-2xl p-6 space-y-6">
-          {faculties.map((faculty, idx) => (
-            <div key={idx} className="space-y-2">
-              <h3 className="text-base font-bold font-serif text-slate-900">
-                {faculty.name}
-              </h3>
-              <ul className="space-y-1.5">
-                {faculty.departments.map((dept, i) => (
-                  <li key={i} className="text-sm text-slate-900">
-                    • {dept}
-                  </li>
-                ))}
-              </ul>
-            </div>
-          ))}
+        <div className="grid grid-cols-1 md:grid-cols-3 gap-5">
+          {faculties.map((faculty, idx) => {
+            const Icon = faculty.icon;
+            return (
+              <div
+                key={idx}
+                className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-2xs hover:shadow-md transition-all border-t-4 border-t-emerald-700 space-y-4"
+              >
+                <div className="flex items-center gap-2">
+                  <div className="bg-emerald-100 text-emerald-800 p-2 rounded-lg shrink-0">
+                    <Icon className="w-5 h-5" />
+                  </div>
+                  <h3 className="text-sm font-bold font-serif text-emerald-950 leading-snug">
+                    {faculty.name}
+                  </h3>
+                </div>
+                <ul className="space-y-1.5">
+                  {faculty.departments.map((dept, i) => (
+                    <li
+                      key={i}
+                      className="text-xs text-slate-700 flex items-center gap-2 bg-slate-50 border border-slate-100 rounded-lg px-2.5 py-1.5"
+                    >
+                      <span className="w-1.5 h-1.5 rounded-full bg-emerald-600 shrink-0" />
+                      {dept}
+                    </li>
+                  ))}
+                </ul>
+              </div>
+            );
+          })}
         </div>
       </div>
 
       {/* Programs Offered Table */}
       <div className="space-y-4">
-        <h2 className="text-2xl font-bold font-serif text-emerald-950 text-center underline decoration-2">
+        <h2 className="text-2xl font-bold font-serif text-emerald-950 text-center">
           Program Offered
         </h2>
-        <p className="text-sm text-slate-700">
+        <p className="text-sm text-slate-700 text-center">
           GGDCN College Offered Following Programs:
         </p>
 
-        <div className="rounded-xl overflow-hidden border border-emerald-200">
-          <div className="grid grid-cols-1 sm:grid-cols-3 bg-emerald-50 border-b border-emerald-200">
-            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200 underline decoration-1">
-              F.Sc. (Pre-Medical - Pre-Engineering)
+        <div className="grid grid-cols-2 sm:grid-cols-3 gap-3">
+          {programOfferedRow1.map((prog, i) => (
+            <div
+              key={i}
+              className="bg-emerald-50 border border-emerald-200 rounded-xl px-4 py-4 text-center text-sm font-semibold text-emerald-900 hover:bg-emerald-100 transition-colors"
+            >
+              {prog}
             </div>
-            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200">
-              I.C.S
+          ))}
+        </div>
+        <div className="grid grid-cols-1 sm:grid-cols-2 gap-3">
+          {programOfferedRow2.map((prog, i) => (
+            <div
+              key={i}
+              className="bg-sky-50 border border-sky-200 rounded-xl px-4 py-4 text-center text-sm font-semibold text-sky-900 hover:bg-sky-100 transition-colors"
+            >
+              {prog}
             </div>
-            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center">
-              I.COM
-            </div>
-          </div>
-          <div className="grid grid-cols-1 sm:grid-cols-2 bg-blue-50">
-            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center border-b sm:border-b-0 sm:border-r border-emerald-200">
-              AD In Sciences
-            </div>
-            <div className="px-4 py-3 text-sm font-semibold text-slate-800 text-center">
-              AD In Arts
-            </div>
-          </div>
+          ))}
         </div>
       </div>
 
@@ -210,28 +149,42 @@ export const AcademicsPage: React.FC = () => {
           Admission Procedure
         </h2>
 
-        <div className="space-y-3">
-          <h3 className="text-lg font-bold text-slate-900">Eligibility Criteria</h3>
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-5">
+          <div className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-2xs space-y-3">
+            <h3 className="text-sm font-bold text-emerald-950 uppercase tracking-wide">
+              F.Sc. (Pre-Medical / Pre-Engineering) / I.C.S / I.COM / Arts
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                SSC or Equivalent
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                Minimum qualification for admission: 45% & above marks
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                Admission is Free of cost
+              </li>
+            </ul>
+          </div>
 
-          <ol className="list-decimal list-inside space-y-3 text-sm text-slate-800">
-            <li>
-              <span className="font-semibold underline">F.Sc. (Pre-Medical - Pre-Engineering)/ I.C.S/ I.COM/ARTS</span>
-              <ul className="list-disc list-inside pl-6 mt-1 space-y-1 text-slate-700">
-                <li>SSC or Equivalent</li>
-                <li>Minimum qualification for admission 45% & above marks are required.</li>
-                <li>Admission is Free of cost</li>
-              </ul>
-            </li>
-            <li>
-              <span className="font-semibold">
-                AD in Sciences (<span className="underline">B.Sc-I</span> & <span className="underline">B.Sc-II</span>) / AD in Arts (B.A-I & <span className="underline">B.A</span>-II)
-              </span>
-              <ul className="list-disc list-inside pl-6 mt-1 space-y-1 text-slate-700">
-                <li>HSC or Equivalent</li>
-                <li>Minimum Qualification for admission 45% & above marks are required.</li>
-              </ul>
-            </li>
-          </ol>
+          <div className="bg-white rounded-2xl p-6 border border-emerald-100 shadow-2xs space-y-3">
+            <h3 className="text-sm font-bold text-emerald-950 uppercase tracking-wide">
+              AD in Sciences (B.Sc-I & B.Sc-II) / AD in Arts (B.A-I & B.A-II)
+            </h3>
+            <ul className="space-y-2 text-sm text-slate-700">
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                HSC or Equivalent
+              </li>
+              <li className="flex items-start gap-2">
+                <CheckCircle2 className="w-4 h-4 text-emerald-600 shrink-0 mt-0.5" />
+                Minimum qualification for admission: 45% & above marks
+              </li>
+            </ul>
+          </div>
         </div>
       </div>
 

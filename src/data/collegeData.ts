@@ -22,7 +22,7 @@ export const COLLEGE_INFO = {
   email: "info@ggdcnawabshah.edu.pk",
   principalEmail: "principal@ggdcnawabshah.edu.pk",
   facebookUrl: "https://www.facebook.com/share/1JbrdXcJ5u/",
-  affiliation: "Affiliated with Board of Intermediate & Secondary Education (BISE) Shaheed Benazirabad & Shah Abdul Latif University / University of Sindh",
+  affiliation: "Affiliated with Board of Intermediate & Secondary Education (BISE) Shaheed Benazirabad & Shaheed Benazir Bhutto University Shaheed Benazirabad / SBBU SBA",
   department: "College Education Department, Government of Sindh",
   workingHours: "Monday to Saturday: 08:00 AM – 02:00 PM (Friday: 08:00 AM – 12:30 PM)",
   logoUrl: "/images/college_official_logo.png",
@@ -32,7 +32,7 @@ export const COLLEGE_INFO = {
   // Principal's Message Section
   principalName: "Prof. Nasreen Wagan",
   principalTitle: "Principal & Institutional Head",
-  principalPhotoUrl: "/images/head.jpeg",
+  principalPhotoUrl: "/images/Principle_Profile",
   principalMessage: "The principle of Government Girls Degree College Nawabshah is overjoyed to welcome the young masons of the Nation to a never failing stream of learning as The institution ever since its creation in 1966 is true to its commitment to the highest standard of all-inclusive and wide ranging education. The fair prestige of the college manifests itself in its achievements and its contribution to the nation building by producing responsible individuals who prove to be assets for our society. The college has no compromise on curriculum; it has been a symbol of success and pride for our youth as it offers multi-dimensional opportunities to students to find out their real genius and to make it known to the world. The institution is big name of satisfaction to the students and parents alike as it has awe inspiring qualities of discipline, great administration and security with Matchless standards of conducive learning environment. The teachers are highly qualified and dedicated too, who develop a positive teacher-student communication which makes this college highly esteemed place of learning desirable for everyone.",
   principalQuote: "Empowering Women Through Quality Higher Education, Leadership & Character Excellence.",
 

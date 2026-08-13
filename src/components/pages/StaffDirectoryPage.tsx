@@ -174,43 +174,6 @@ export const StaffDirectoryPage: React.FC = () => {
         </div>
       </div>
 
-      {/* Official Roster Document Upload Module (For Principal / IT In-charge) */}
-      <div className="bg-emerald-950 text-white rounded-2xl p-6 sm:p-8 space-y-4">
-        <div className="flex items-center gap-2 text-amber-400 font-bold text-xs uppercase tracking-wider">
-          <Upload className="w-4 h-4" />
-          Administration & IT Wing Portal
-        </div>
-        <h3 className="text-xl font-bold font-serif text-white">
-          Upload Official Verified Faculty Roster (CSV / PDF)
-        </h3>
-        <p className="text-xs text-emerald-200 leading-relaxed max-w-3xl">
-          Authorized Principal Office personnel can attach the verified staff notification list issued by the Regional Directorate of College Education Shaheed Benazirabad to sync with the public portal.
-        </p>
-
-        {uploadSuccess && (
-          <div className="bg-emerald-800 border border-emerald-500 text-white p-3 rounded-xl text-xs flex items-center gap-2 animate-fadeIn">
-            <CheckCircle2 className="w-5 h-5 text-amber-300 shrink-0" />
-            <span>Official Faculty Roster Document uploaded successfully! Document reference registered with IT Wing.</span>
-          </div>
-        )}
-
-        <form onSubmit={handleSimulatedUpload} className="bg-emerald-900/80 p-4 rounded-xl border border-emerald-800 flex flex-col sm:flex-row items-center gap-4">
-          <input
-            type="file"
-            accept=".csv,.pdf,.xlsx"
-            required
-            className="text-xs text-emerald-200 file:mr-4 file:py-2 file:px-4 file:rounded-lg file:border-0 file:text-xs file:font-bold file:bg-amber-500 file:text-slate-950 hover:file:bg-amber-400 cursor-pointer"
-          />
-          <button
-            type="submit"
-            className="bg-emerald-600 hover:bg-emerald-500 text-white font-bold text-xs px-5 py-2.5 rounded-lg transition-all shrink-0 flex items-center gap-1.5"
-          >
-            <Upload className="w-4 h-4 text-amber-300" />
-            <span>Submit Verified Roster</span>
-          </button>
-        </form>
-      </div>
-
     </div>
   );
 };
