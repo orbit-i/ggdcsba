@@ -8,7 +8,6 @@ export type PageType =
   | 'notifications' 
   | 'downloads' 
   | 'gallery' 
-  | 'grievance' 
   | 'contact'
   | 'admin';
 
@@ -102,13 +101,3 @@ export interface UsefulLink {
   category: 'Government' | 'Board & Varsity' | 'Admission Portal' | 'Academic Resource';
 }
 
-export interface GrievanceTicket {
-  ticketId: string;
-  applicantName: string;
-  cnicOrRoll: string;
-  category: string;
-  subject: string;
-  details: string;
-  status: 'Received' | 'Under Review' | 'Resolved';
-  submittedAt: string;
-}

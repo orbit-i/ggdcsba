@@ -19,8 +19,8 @@ export const COLLEGE_INFO = {
   phones: ["0244-9470174", "0244-9470173"],
   phonePrimary: "0244-9470174",
   phoneSecondary: "0244-9470173",
-  // email: "info@ggdcnawabshah.edu.pk",
-  // principalEmail: "principal@ggdcnawabshah.edu.pk",
+  email: "", // placeholder — set the real official college email via Super Admin Dashboard
+  principalEmail: "", // placeholder — set the real principal email via Super Admin Dashboard
   facebookUrl: "https://www.facebook.com/share/1Dtr7stS8i/?mibextid=wwXIfr",
   affiliation: "Affiliated with Board of Intermediate & Secondary Education (BISE) Shaheed Benazirabad & Shaheed Benazir Bhutto University Shaheed Benazirabad / SBBU SBA",
   department: "College Education Department, Government of Sindh",

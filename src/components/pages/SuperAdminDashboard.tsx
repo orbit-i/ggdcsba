@@ -9,7 +9,6 @@ import {
   Download, 
   Image, 
   Users, 
-  MessageSquare, 
   Database, 
   Plus, 
   Trash2, 
@@ -46,7 +45,6 @@ export const SuperAdminDashboard: React.FC = () => {
     downloads,
     galleryPhotos,
     sanctionedPosts,
-    grievances,
     usefulLinks,
     updateCollegeInfo,
     addAnnouncement,
@@ -74,8 +72,6 @@ export const SuperAdminDashboard: React.FC = () => {
     addUsefulLink,
     updateUsefulLink,
     deleteUsefulLink,
-    updateGrievanceStatus,
-    deleteGrievance,
     resetToDefaults,
     exportDataJSON,
     importDataJSON
@@ -149,7 +145,7 @@ export const SuperAdminDashboard: React.FC = () => {
   };
 
   const [activeTab, setActiveTab] = useState<
-    'info' | 'announcements' | 'programs' | 'fees' | 'facilities' | 'downloads' | 'gallery' | 'departments' | 'posts' | 'grievances' | 'backup'
+    'info' | 'announcements' | 'programs' | 'fees' | 'facilities' | 'downloads' | 'gallery' | 'departments' | 'posts' | 'backup'
   >('info');
 
   const [notificationMsg, setNotificationMsg] = useState<string | null>(null);
@@ -371,7 +367,6 @@ export const SuperAdminDashboard: React.FC = () => {
           { id: 'gallery', label: 'Photo Gallery', icon: Image },
           { id: 'departments', label: 'Departments & HODs', icon: Users },
           { id: 'posts', label: 'Staff Roster Posts', icon: FileText },
-          { id: 'grievances', label: 'Grievance Desk', icon: MessageSquare },
           { id: 'backup', label: 'Backup / JSON', icon: Database }
         ].map((tab) => {
           const Icon = tab.icon;
@@ -1527,82 +1522,7 @@ export const SuperAdminDashboard: React.FC = () => {
         </div>
       )}
 
-      {/* TAB 10: STUDENT GRIEVANCE DESK */}
-      {activeTab === 'grievances' && (
-        <div className="bg-white rounded-3xl p-6 border-2 border-[#006837]/10 shadow-sm space-y-6">
-          <div className="border-b border-slate-200 pb-3 flex justify-between items-center">
-            <div>
-              <h2 className="text-xl font-black font-serif text-slate-900">Digital Grievance Ticket Management</h2>
-              <p className="text-xs text-slate-500">Review student inquiries, track ticket statuses, and update resolution states.</p>
-            </div>
-            <span className="bg-[#006837] text-white text-xs font-black px-3 py-1 rounded-full font-mono">
-              Total Tickets: {grievances.length}
-            </span>
-          </div>
-
-          <div className="space-y-4">
-            {grievances.length === 0 ? (
-              <p className="text-xs text-slate-500 italic">No student grievances currently pending.</p>
-            ) : (
-              grievances.map((g) => (
-                <div key={g.ticketId} className="p-4 bg-slate-50 rounded-2xl border border-slate-200 space-y-3">
-                  <div className="flex flex-col sm:flex-row sm:items-center justify-between gap-2 border-b border-slate-200 pb-2">
-                    <div className="flex items-center gap-2">
-                      <span className="bg-[#006837] text-amber-300 font-mono text-xs font-black px-2.5 py-0.5 rounded-full">
-                        {g.ticketId}
-                      </span>
-                      <span className="text-xs font-bold text-slate-900">{g.applicantName}</span>
-                      <span className="text-[11px] text-slate-500 font-mono">({g.cnicOrRoll})</span>
-                    </div>
-
-                    <div className="flex items-center gap-2">
-                      <select
-                        value={g.status}
-                        onChange={(e) => {
-                          updateGrievanceStatus(g.ticketId, e.target.value as any);
-                          showToast(`Ticket ${g.ticketId} Status Updated to ${e.target.value}`);
-                        }}
-                        className={`text-xs font-black px-3 py-1 rounded-full focus:outline-none ${
-                          g.status === 'Resolved' 
-                            ? 'bg-emerald-200 text-[#006837]' 
-                            : g.status === 'Under Review' 
-                            ? 'bg-amber-200 text-amber-900' 
-                            : 'bg-blue-100 text-blue-900'
-                        }`}
-                      >
-                        <option value="Received">Received</option>
-                        <option value="Under Review">Under Review</option>
-                        <option value="Resolved">Resolved</option>
-                      </select>
-
-                      <button
-                        onClick={() => {
-                          deleteGrievance(g.ticketId);
-                          showToast("Ticket Deleted");
-                        }}
-                        className="text-red-600 text-xs font-bold p-1 hover:bg-red-50 rounded"
-                      >
-                        <Trash2 className="w-4 h-4" />
-                      </button>
-                    </div>
-                  </div>
-
-                  <div>
-                    <p className="text-xs font-black text-slate-900">{g.subject}</p>
-                    <p className="text-xs text-slate-700 mt-1 bg-white p-3 rounded-xl border border-slate-200 leading-relaxed">
-                      "{g.details}"
-                    </p>
-                  </div>
-
-                  <p className="text-[10px] text-slate-400">Submitted: {g.submittedAt} • Category: {g.category}</p>
-                </div>
-              ))
-            )}
-          </div>
-        </div>
-      )}
-
-      {/* TAB 11: DATABASE BACKUP & JSON IMPORT/EXPORT */}
+      {/* TAB 10: DATABASE BACKUP & JSON IMPORT/EXPORT */}
       {activeTab === 'backup' && (
         <div className="bg-white rounded-3xl p-6 border-2 border-[#006837]/10 shadow-sm space-y-6">
           <div className="border-b border-slate-200 pb-3">

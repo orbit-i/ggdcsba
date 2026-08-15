@@ -15,7 +15,6 @@ import { StaffDirectoryPage } from './components/pages/StaffDirectoryPage';
 import { NotificationsPage } from './components/pages/NotificationsPage';
 import { DownloadsPage } from './components/pages/DownloadsPage';
 import { GalleryPage } from './components/pages/GalleryPage';
-import { GrievancePage } from './components/pages/GrievancePage';
 import { ContactPage } from './components/pages/ContactPage';
 import { SuperAdminDashboard } from './components/pages/SuperAdminDashboard';
 
@@ -42,8 +41,6 @@ export default function App() {
         return <DownloadsPage />;
       case 'gallery':
         return <GalleryPage />;
-      case 'grievance':
-        return <GrievancePage />;
       case 'contact':
         return <ContactPage />;
       case 'admin':

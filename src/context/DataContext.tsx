@@ -642,7 +642,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       downloads,
       galleryPhotos,
       sanctionedPosts,
-      grievances,
       usefulLinks,
       updateCollegeInfo,
       addAnnouncement,
@@ -670,9 +669,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       addUsefulLink,
       updateUsefulLink,
       deleteUsefulLink,
-      addGrievance,
-      updateGrievanceStatus,
-      deleteGrievance,
       resetToDefaults,
       exportDataJSON,
       importDataJSON
