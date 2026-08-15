@@ -31,7 +31,7 @@ export const Header: React.FC<HeaderProps> = ({ onNavigate }) => {
             </a>
             <span className="text-white/30 hidden sm:inline">|</span>
             <a 
-              href={collegeInfo?.facebookUrl || "https://www.facebook.com/share/1JbrdXcJ5u/"} 
+              href={collegeInfo?.facebookUrl || "https://www.facebook.com/share/1Dtr7stS8i/?mibextid=wwXIfr"} 
               target="_blank" 
               rel="noopener noreferrer" 
               className="hidden sm:flex items-center gap-1 hover:text-white transition-colors"

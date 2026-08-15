@@ -35,7 +35,6 @@ export const Navbar: React.FC<NavbarProps> = ({ currentPage, onNavigate }) => {
     { id: 'notifications', label: 'Notices', icon: Bell },
     { id: 'downloads', label: 'Downloads', icon: Download },
     { id: 'gallery', label: 'Gallery', icon: ImageIcon },
-    { id: 'grievance', label: 'Grievance', icon: MessageSquare },
     { id: 'contact', label: 'Contact Us', icon: PhoneCall },
   ];
 

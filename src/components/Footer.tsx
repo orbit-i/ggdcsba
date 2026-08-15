@@ -74,9 +74,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 </button>
               </li>
               <li>
-                <button onClick={() => { onNavigate('grievance'); scrollToTop(); }} className="hover:text-white transition-colors">
-                  › Grievance & Feedback Portal
-                </button>
+               
               </li>
             </ul>
           </div>
@@ -118,8 +116,7 @@ export const Footer: React.FC<FooterProps> = ({ onNavigate }) => {
                 <span>0244-9470174 | 0244-9470173</span>
               </p>
               <p className="flex items-center gap-2">
-                <Mail className="w-4 h-4 text-white shrink-0" />
-                <span>{collegeInfo.email}</span>
+                
               </p>
               <a 
                 href={collegeInfo.facebookUrl} 

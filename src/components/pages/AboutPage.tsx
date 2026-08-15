@@ -43,7 +43,7 @@ export const AboutPage: React.FC = () => {
               <p className="text-xs text-[#006837] font-extrabold mt-0.5 uppercase tracking-wider">Established Year</p>
             </div>
             <div className="bg-[#dcfce7] p-4 rounded-2xl border border-emerald-200 text-center">
-              <span className="text-3xl font-black text-[#006837] font-serif">5000+</span>
+              <span className="text-3xl font-black text-[#006837] font-serif">1000+</span>
               <p className="text-xs text-[#006837] font-extrabold mt-0.5 uppercase tracking-wider">Alumnae Graduates</p>
             </div>
           </div>
