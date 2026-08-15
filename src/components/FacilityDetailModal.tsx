@@ -82,30 +82,6 @@ export const FacilityDetailModal: React.FC<FacilityDetailModalProps> = ({
           </p>
         </div>
 
-        {/* Feature Highlights Bullet List */}
-        <div className="space-y-3">
-          <div className="flex items-center justify-between border-b border-slate-200 pb-2">
-            <h3 className="text-sm font-extrabold text-slate-900 uppercase tracking-wide flex items-center gap-2">
-              <ShieldCheck className="w-4 h-4 text-[#0B6E31]" />
-              Key Features & Infrastructure Highlights
-            </h3>
-            <span className="text-[11px] text-slate-500 font-semibold">Verified Facility</span>
-          </div>
-
-          <ul className="grid grid-cols-1 sm:grid-cols-1 gap-2.5">
-            {(facility.features && facility.features.length > 0 ? facility.features : [
-              "Dedicated modern space equipped according to Sindh Government Higher Education standards.",
-              "Maintained with regular maintenance and safety protocols.",
-              "Accessible to all enrolled students and faculty members during college working hours."
-            ]).map((feat, idx) => (
-              <li key={idx} className="flex items-start gap-2.5 text-xs text-slate-700 bg-slate-50 p-2.5 rounded-lg border border-slate-200/80 hover:border-emerald-300 transition-colors">
-                <CheckCircle2 className="w-4 h-4 text-[#0B6E31] shrink-0 mt-0.5" />
-                <span className="leading-normal font-medium">{feat}</span>
-              </li>
-            ))}
-          </ul>
-        </div>
-
         {/* Footer Actions */}
         <div className="pt-4 border-t border-slate-200 flex flex-col sm:flex-row items-center justify-between gap-3">
           <p className="text-[11px] text-slate-500">
