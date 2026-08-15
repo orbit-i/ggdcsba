@@ -7,7 +7,7 @@ import {
   DownloadItem, 
   GalleryPhoto, 
   DepartmentStructure,
-  GrievanceTicket,
+
   SanctionedPost,
   UsefulLink
 } from '../types';
@@ -135,28 +135,8 @@ const DEFAULT_SANCTIONED_POSTS: SanctionedPost[] = [
   }
 ];
 
-const DEFAULT_GRIEVANCES: GrievanceTicket[] = [
-  {
-    ticketId: "GRV-2026-8801",
-    applicantName: "Fatima Zehra",
-    cnicOrRoll: "44101-9876543-2",
-    category: "Academic & Class Schedule",
-    subject: "Request for Chemistry Lab Timings Adjustment",
-    details: "Respectfully requested to align BS Chemistry 3rd semester lab hours with morning bus shuttle service.",
-    status: "Under Review",
-    submittedAt: "2026-08-08 10:15 AM"
-  },
-  {
-    ticketId: "GRV-2026-8802",
-    applicantName: "Ayesha Khan",
-    cnicOrRoll: "44101-1234567-1",
-    category: "Fee & Challan Verification",
-    subject: "BS Computer Science Semester 1 Challan Verification",
-    details: "Payment submitted at NBP College Road Branch on 02-Aug-2026. Requesting clearance confirmation.",
-    status: "Resolved",
-    submittedAt: "2026-08-05 02:30 PM"
-  }
-];
+
+
 
 export interface DataContextType {
   collegeInfo: typeof COLLEGE_INFO;
@@ -168,7 +148,7 @@ export interface DataContextType {
   downloads: DownloadItem[];
   galleryPhotos: GalleryPhoto[];
   sanctionedPosts: SanctionedPost[];
-  grievances: GrievanceTicket[];
+  
   usefulLinks: UsefulLink[];
 
   // Actions
@@ -208,9 +188,7 @@ export interface DataContextType {
   updateUsefulLink: (id: string, item: Partial<UsefulLink>) => void;
   deleteUsefulLink: (id: string) => void;
 
-  addGrievance: (item: Omit<GrievanceTicket, 'ticketId' | 'submittedAt' | 'status'>) => string;
-  updateGrievanceStatus: (ticketId: string, status: 'Received' | 'Under Review' | 'Resolved') => void;
-  deleteGrievance: (ticketId: string) => void;
+ 
 
   resetToDefaults: () => void;
   exportDataJSON: () => string;
@@ -323,17 +301,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     return DEFAULT_SANCTIONED_POSTS;
   });
 
-  const [grievances, setGrievances] = useState<GrievanceTicket[]>(() => {
-    try {
-      const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
-      if (saved) {
-        const parsed = JSON.parse(saved);
-        if (Array.isArray(parsed.grievances)) return parsed.grievances;
-      }
-    } catch (e) {}
-    return DEFAULT_GRIEVANCES;
-  });
-
+ 
   const [usefulLinks, setUsefulLinks] = useState<UsefulLink[]>(() => {
     try {
       const saved = localStorage.getItem(LOCAL_STORAGE_KEY);
@@ -358,7 +326,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
         downloads,
         galleryPhotos,
         sanctionedPosts,
-        grievances,
+   
         usefulLinks
       };
       localStorage.setItem(LOCAL_STORAGE_KEY, JSON.stringify(stateToSave));
@@ -375,7 +343,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     downloads,
     galleryPhotos,
     sanctionedPosts,
-    grievances,
+  
     usefulLinks
   ]);
 
@@ -596,27 +564,9 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setSanctionedPosts(prev => prev.filter(sp => sp.id !== id));
   };
 
-  const addGrievance = (item: Omit<GrievanceTicket, 'ticketId' | 'submittedAt' | 'status'>) => {
-    const ticketId = `GRV-${new Date().getFullYear()}-${Math.floor(1000 + Math.random() * 9000)}`;
-    const now = new Date();
-    const formattedDate = `${now.toISOString().split('T')[0]} ${now.toLocaleTimeString([], { hour: '2-digit', minute: '2-digit' })}`;
-    const newTicket: GrievanceTicket = {
-      ticketId,
-      ...item,
-      status: 'Received',
-      submittedAt: formattedDate
-    };
-    setGrievances(prev => [newTicket, ...prev]);
-    return ticketId;
-  };
+  
 
-  const updateGrievanceStatus = (ticketId: string, status: 'Received' | 'Under Review' | 'Resolved') => {
-    setGrievances(prev => prev.map(g => g.ticketId === ticketId ? { ...g, status } : g));
-  };
-
-  const deleteGrievance = (ticketId: string) => {
-    setGrievances(prev => prev.filter(g => g.ticketId !== ticketId));
-  };
+ 
 
   const addUsefulLink = (item: Omit<UsefulLink, 'id'>) => {
     const newId = `ul-${Date.now()}`;
@@ -642,7 +592,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
     setDownloads(DOWNLOADS);
     setGalleryPhotos(GALLERY_PHOTOS);
     setSanctionedPosts(DEFAULT_SANCTIONED_POSTS);
-    setGrievances(DEFAULT_GRIEVANCES);
     setUsefulLinks(USEFUL_LINKS);
   };
 
@@ -657,7 +606,6 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       downloads,
       galleryPhotos,
       sanctionedPosts,
-      grievances,
       usefulLinks
     }, null, 2);
   };
@@ -674,7 +622,7 @@ export const DataProvider: React.FC<{ children: React.ReactNode }> = ({ children
       if (parsed.downloads) setDownloads(parsed.downloads);
       if (parsed.galleryPhotos) setGalleryPhotos(parsed.galleryPhotos);
       if (parsed.sanctionedPosts) setSanctionedPosts(parsed.sanctionedPosts);
-      if (parsed.grievances) setGrievances(parsed.grievances);
+      
       if (parsed.usefulLinks) setUsefulLinks(parsed.usefulLinks);
       return true;
     } catch (e) {
